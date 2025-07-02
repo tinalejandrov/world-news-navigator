@@ -1076,5 +1076,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+function hideCookieBanner() {
+  document.getElementById("cookie-banner").style.display = "none";
+  localStorage.setItem("cookieAccepted", "true");
+}
 
-
+window.addEventListener("load", function () {
+  if (!localStorage.getItem("cookieAccepted")) {
+    document.getElementById("cookie-banner").style.display = "block";
+  }
+});
