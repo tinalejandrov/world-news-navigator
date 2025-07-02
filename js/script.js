@@ -448,7 +448,319 @@ const data = {
           { name: "Vietnam News", url: "https://vietnamnews.vn" },
           { name: "Tuổi Trẻ News", url: "https://tuoitrenews.vn" }
         ]          
-    } 
+    },
+    europe: {
+        albania: [
+          { name: "BalkanWeb", url: "https://www.balkanweb.com" },
+          { name: "Gazeta Tema", url: "https://www.gazetatema.net" },
+          { name: "Koha Jonë", url: "https://kohajone.com" }
+        ],
+        andorra: [
+          { name: "Diari d'Andorra", url: "https://www.diariandorra.ad" },
+          { name: "Altaveu", url: "https://www.altaveu.com" },
+          { name: "Bondia", url: "https://www.bondia.ad" }
+        ],
+        austria: [
+          { name: "Der Standard", url: "https://www.derstandard.at" },
+          { name: "Die Presse", url: "https://www.diepresse.com" },
+          { name: "Kronen Zeitung", url: "https://www.krone.at" }
+        ],
+        belgium: [
+          { name: "Le Soir", url: "https://www.lesoir.be" },
+          { name: "De Standaard", url: "https://www.standaard.be" },
+          { name: "Het Laatste Nieuws", url: "https://www.hln.be" }
+        ],
+        belarus: [
+          { name: "BelTA", url: "https://eng.belta.by" },
+          { name: "Nasha Niva", url: "https://nashaniva.com" },
+          { name: "Zerkalo", url: "https://zerkalo.io" }
+        ],
+        bosnia_and_herzegovina: [
+          { name: "Avaz", url: "https://avaz.ba" },
+          { name: "Dnevni Avaz", url: "https://dnevniavaz.ba" },
+          { name: "Oslobođenje", url: "https://oslobodjenje.ba" }
+        ],
+        bulgaria: [
+          { name: "24 Chasa", url: "https://www.24chasa.bg" },
+          { name: "Trud", url: "https://trud.bg" },
+          { name: "Dnevnik", url: "https://www.dnevnik.bg" }
+        ],
+        croatia: [
+          { name: "Jutarnji list", url: "https://www.jutarnji.hr" },
+          { name: "Večernji list", url: "https://www.vecernji.hr" },
+          { name: "Slobodna Dalmacija", url: "https://slobodnadalmacija.hr" }
+        ],
+        cyprus: [
+          { name: "Cyprus Mail", url: "https://cyprus-mail.com" },
+          { name: "Phileleftheros", url: "https://www.philenews.com" },
+          { name: "In-Cyprus", url: "https://in-cyprus.philenews.com" }
+        ],
+        czech_republic: [
+          { name: "Lidové noviny", url: "https://www.lidovky.cz" },
+          { name: "Mladá fronta DNES", url: "https://www.idnes.cz" },
+          { name: "Právo", url: "https://www.novinky.cz" }
+        ],
+        denmark: [
+          { name: "Politiken", url: "https://politiken.dk" },
+          { name: "Jyllands-Posten", url: "https://jyllands-posten.dk" },
+          { name: "Berlingske", url: "https://www.berlingske.dk" }
+        ],
+        slovakia: [
+          { name: "SME", url: "https://www.sme.sk" },
+          { name: "Pravda", url: "https://www.pravda.sk" },
+          { name: "Denník N", url: "https://dennikn.sk" }
+        ],
+        slovenia: [
+          { name: "Delo", url: "https://www.delo.si" },
+          { name: "Dnevnik", url: "https://www.dnevnik.si" },
+          { name: "Večer", url: "https://www.vecer.com" }
+        ],
+        spain: [
+          { name: "El País", url: "https://elpais.com" },
+          { name: "El Mundo", url: "https://elmundo.es" },
+          { name: "ABC", url: "https://www.abc.es" }
+        ],
+        estonia: [
+          { name: "Postimees", url: "https://www.postimees.ee" },
+          { name: "Eesti Päevaleht", url: "https://epl.delfi.ee" },
+          { name: "Õhtuleht", url: "https://www.ohtuleht.ee" }
+        ],
+        finland: [
+          { name: "Helsingin Sanomat", url: "https://www.hs.fi" },
+          { name: "Ilta-Sanomat", url: "https://www.is.fi" },
+          { name: "Iltalehti", url: "https://www.iltalehti.fi" }
+        ],
+        france: [
+          { name: "Le Monde", url: "https://www.lemonde.fr" },
+          { name: "Le Figaro", url: "https://www.lefigaro.fr" },
+          { name: "Libération", url: "https://www.liberation.fr" },
+          { name: "L’Équipe", url: "https://www.lequipe.fr" },
+          { name: "Les Echos", url: "https://www.lesechos.fr" },
+          { name: "Le Parisien", url: "https://www.leparisien.fr" },
+          { name: "La Dépêche", url: "https://www.ladepeche.fr" },
+          { name: "Nice-Matin", url: "https://www.nicematin.com" },
+          { name: "Ouest-France", url: "https://www.ouest-france.fr" },
+          { name: "La Provence", url: "https://www.laprovence.com" },
+          { name: "Le Canard Enchaîné", url: "https://www.lecanardenchaine.fr" },
+          { name: "La Croix", url: "https://www.la-croix.com" },
+          { name: "L’Humanité", url: "https://www.humanite.fr" },
+          { name: "Rue89", url: "https://www.nouvelobs.com/rue89" },
+          { name: "Le Télégramme", url: "https://www.letelegramme.fr" }
+        ],        
+        georgia: [
+          { name: "Agenda.ge", url: "https://agenda.ge" },
+          { name: "Georgia Today", url: "https://www.georgiatoday.ge" },
+          { name: "The Messenger", url: "https://www.messenger.com.ge" }
+        ],
+        germany: [
+          { name: "Der Spiegel", url: "https://www.spiegel.de" },
+          { name: "Die Welt", url: "https://www.welt.de" },
+          { name: "Frankfurter Allgemeine", url: "https://www.faz.net" },
+          { name: "Süddeutsche Zeitung", url: "https://www.sueddeutsche.de" },
+          { name: "Bild", url: "https://www.bild.de" },
+          { name: "Tagesschau", url: "https://www.tagesschau.de" },
+          { name: "Focus Online", url: "https://www.focus.de" },
+          { name: "Handelsblatt", url: "https://www.handelsblatt.com" },
+          { name: "Berliner Zeitung", url: "https://www.berliner-zeitung.de" },
+          { name: "taz – Die Tageszeitung", url: "https://taz.de" },
+          { name: "Märkische Allgemeine", url: "https://www.maz-online.de" },
+          { name: "Südwest Presse", url: "https://www.swp.de" },
+          { name: "Nordwest-Zeitung", url: "https://www.nwzonline.de" },
+          { name: "Neue Osnabrücker Zeitung", url: "https://www.noz.de" },
+          { name: "Rheinische Post", url: "https://rp-online.de" }
+        ],        
+        greece: [
+          { name: "Kathimerini", url: "https://www.ekathimerini.com" },
+          { name: "Ta Nea", url: "https://www.tanea.gr" },
+          { name: "Proto Thema", url: "https://www.protothema.gr" }
+        ],
+        hungary: [
+          { name: "Magyar Nemzet", url: "https://magyarnemzet.hu" },
+          { name: "Népszava", url: "https://nepszava.hu" },
+          { name: "Index.hu", url: "https://index.hu" }
+        ],
+        ireland: [
+          { name: "The Irish Times", url: "https://www.irishtimes.com" },
+          { name: "Irish Independent", url: "https://www.independent.ie" },
+          { name: "The Journal", url: "https://www.thejournal.ie" }
+        ],
+        iceland: [
+          { name: "Morgunblaðið", url: "https://www.mbl.is" },
+          { name: "Vísir", url: "https://www.visir.is" },
+          { name: "Fréttablaðið", url: "https://www.frettabladid.is" }
+        ],
+        italy: [
+          { name: "Corriere della Sera", url: "https://www.corriere.it" },
+          { name: "La Repubblica", url: "https://www.repubblica.it" },
+          { name: "Il Sole 24 Ore", url: "https://www.ilsole24ore.com" },
+          { name: "La Stampa", url: "https://www.lastampa.it" },
+          { name: "Il Messaggero", url: "https://www.ilmessaggero.it" },
+          { name: "Il Giornale", url: "https://www.ilgiornale.it" },
+          { name: "Avvenire", url: "https://www.avvenire.it" },
+          { name: "Il Fatto Quotidiano", url: "https://www.ilfattoquotidiano.it" },
+          { name: "Libero", url: "https://www.liberoquotidiano.it" },
+          { name: "Il Manifesto", url: "https://ilmanifesto.it" },
+          { name: "Il Tempo", url: "https://www.iltempo.it" },
+          { name: "Gazzetta dello Sport", url: "https://www.gazzetta.it" },
+          { name: "Tuttosport", url: "https://www.tuttosport.com" },
+          { name: "L’Unione Sarda", url: "https://www.unionesarda.it" },
+          { name: "Trentino", url: "https://www.giornaletrentino.it" }
+        ],
+        kazakhstan: [
+          { name: "Kazinform", url: "https://www.inform.kz/en" },
+          { name: "The Astana Times", url: "https://astanatimes.com" },
+          { name: "Tengrinews", url: "https://en.tengrinews.kz" }
+        ],
+        kosovo: [
+          { name: "Koha Ditore", url: "https://www.koha.net" },
+          { name: "Gazeta Express", url: "https://www.gazetaexpress.com" },
+          { name: "Zëri", url: "https://zeri.info" }
+        ],
+        latvia: [
+          { name: "Latvijas Avīze", url: "https://www.la.lv" },
+          { name: "Diena", url: "https://www.diena.lv" },
+          { name: "TVNET", url: "https://www.tvnet.lv" }
+        ],
+        liechtenstein: [
+          { name: "Vaterland", url: "https://www.vaterland.li" },
+          { name: "Liechtensteiner Volksblatt", url: "https://www.volksblatt.li" },
+          { name: "Lie:Zeit", url: "https://www.lie-zeit.li" }
+        ],
+        lithuania: [
+          { name: "Lietuvos rytas", url: "https://www.lrytas.lt" },
+          { name: "Delfi", url: "https://www.delfi.lt" },
+          { name: "15min", url: "https://www.15min.lt" }
+        ],
+        luxembourg: [
+          { name: "Luxemburger Wort", url: "https://www.wort.lu" },
+          { name: "Tageblatt", url: "https://www.tageblatt.lu" },
+          { name: "L'essentiel", url: "https://www.lessentiel.lu" }
+        ],
+        malta: [
+          { name: "Times of Malta", url: "https://timesofmalta.com" },
+          { name: "Malta Independent", url: "https://www.independent.com.mt" },
+          { name: "Malta Today", url: "https://www.maltatoday.com.mt" }
+        ],
+        moldova: [
+          { name: "Timpul", url: "https://timpul.md" },
+          { name: "Ziarul de Gardă", url: "https://www.zdg.md" },
+          { name: "Publika", url: "https://www.publika.md" }
+        ],
+        monaco: [
+          { name: "Monaco Tribune", url: "https://www.monaco-tribune.com" },
+          { name: "Monaco Life", url: "https://monacolife.net" },
+          { name: "Riviera Times", url: "https://rivieratimes.com" }
+        ],
+        montenegro: [
+          { name: "Vijesti", url: "https://www.vijesti.me" },
+          { name: "Dan", url: "https://www.dan.co.me" },
+          { name: "Pobjeda", url: "https://www.pobjeda.me" }
+        ],
+        netherlands: [
+          { name: "De Telegraaf", url: "https://www.telegraaf.nl" },
+          { name: "NRC", url: "https://www.nrc.nl" },
+          { name: "de Volkskrant", url: "https://www.volkskrant.nl" }
+        ],
+        north_macedonia: [
+          { name: "Nova Makedonija", url: "https://novamakedonija.com.mk" },
+          { name: "Sloboden Pechat", url: "https://www.slobodenpecat.mk" },
+          { name: "NetPress", url: "https://netpress.com.mk" }
+        ],
+        norway: [
+          { name: "Aftenposten", url: "https://www.aftenposten.no" },
+          { name: "VG (Verdens Gang)", url: "https://www.vg.no" },
+          { name: "Dagbladet", url: "https://www.dagbladet.no" }
+        ],
+        poland: [
+          { name: "Gazeta Wyborcza", url: "https://wyborcza.pl" },
+          { name: "Rzeczpospolita", url: "https://www.rp.pl" },
+          { name: "Dziennik Gazeta Prawna", url: "https://www.gazetaprawna.pl" }
+        ],
+        portugal: [
+          { name: "Público", url: "https://www.publico.pt" },
+          { name: "Diário de Notícias", url: "https://www.dn.pt" },
+          { name: "Correio da Manhã", url: "https://www.cmjornal.pt" }
+        ],
+        england: [
+          { name: "The Guardian", url: "https://www.theguardian.com" },
+          { name: "The Times", url: "https://www.thetimes.co.uk" },
+          { name: "The Telegraph", url: "https://www.telegraph.co.uk" },
+          { name: "The Independent", url: "https://www.independent.co.uk" },
+          { name: "Daily Mail", url: "https://www.dailymail.co.uk" },
+          { name: "The Sun", url: "https://www.thesun.co.uk" },
+          { name: "Metro", url: "https://metro.co.uk" },
+          { name: "Evening Standard", url: "https://www.standard.co.uk" },
+          { name: "Financial Times", url: "https://www.ft.com" },
+          { name: "Daily Express", url: "https://www.express.co.uk" },
+          { name: "Daily Mirror", url: "https://www.mirror.co.uk" },
+          { name: "iNews", url: "https://inews.co.uk" },
+          { name: "Daily Star", url: "https://www.dailystar.co.uk" },
+          { name: "The Spectator", url: "https://www.spectator.co.uk" },
+          { name: "New Statesman", url: "https://www.newstatesman.com" }
+        ],        
+        scotland: [
+          { name: "The Scotsman", url: "https://www.scotsman.com" },
+          { name: "The Herald", url: "https://www.heraldscotland.com" },
+          { name: "Daily Record", url: "https://www.dailyrecord.co.uk" },
+          { name: "The National", url: "https://www.thenational.scot" },
+          { name: "Press and Journal", url: "https://www.pressandjournal.co.uk" }
+        ],        
+        wales: [
+          { name: "Wales Online", url: "https://www.walesonline.co.uk" },
+          { name: "Daily Post", url: "https://www.dailypost.co.uk" },
+          { name: "South Wales Argus", url: "https://www.southwalesargus.co.uk" },
+          { name: "Western Mail", url: "https://www.walesonline.co.uk/news/western-mail" },
+          { name: "North Wales Chronicle", url: "https://www.northwaleschronicle.co.uk" }
+        ],        
+        northern_ireland: [
+          { name: "Belfast Telegraph", url: "https://www.belfasttelegraph.co.uk" },
+          { name: "The Irish News", url: "https://www.irishnews.com" },
+          { name: "News Letter", url: "https://www.newsletter.co.uk" },
+          { name: "Causeway Chronicle", url: "https://www.causewaychronicle.co.uk" },
+          { name: "Newry Reporter", url: "https://www.newryreporter.com" }
+        ],        
+        romania: [
+          { name: "Adevărul", url: "https://adevarul.ro" },
+          { name: "România Liberă", url: "https://romanialibera.ro" },
+          { name: "Evenimentul Zilei", url: "https://evz.ro" }
+        ],
+        russia: [
+          { name: "Kommersant", url: "https://www.kommersant.ru" },
+          { name: "Rossiyskaya Gazeta", url: "https://rg.ru" },
+          { name: "The Moscow Times", url: "https://www.themoscowtimes.com" }
+        ],
+        san_marino: [
+          { name: "San Marino RTV", url: "https://www.sanmarinortv.sm" },
+          { name: "La Serenissima", url: "https://www.laserenissima.sm" },
+          { name: "Libertas", url: "https://www.libertas.sm" }
+        ],
+        serbia: [
+          { name: "Blic", url: "https://www.blic.rs" },
+          { name: "Danas", url: "https://www.danas.rs" },
+          { name: "Politika", url: "https://www.politika.rs" }
+        ],
+        sweden: [
+          { name: "Dagens Nyheter", url: "https://www.dn.se" },
+          { name: "Aftonbladet", url: "https://www.aftonbladet.se" },
+          { name: "Svenska Dagbladet", url: "https://www.svd.se" }
+        ],
+        switzerland: [
+          { name: "Neue Zürcher Zeitung", url: "https://www.nzz.ch" },
+          { name: "Le Temps", url: "https://www.letemps.ch" },
+          { name: "Blick", url: "https://www.blick.ch" }
+        ],
+        ukraine: [
+          { name: "Kyiv Post", url: "https://www.kyivpost.com" },
+          { name: "Ukrayinska Pravda", url: "https://www.pravda.com.ua/eng" },
+          { name: "The Kyiv Independent", url: "https://kyivindependent.com" }
+        ],
+        vatican: [
+          { name: "L'Osservatore Romano", url: "https://www.osservatoreromano.va" },
+          { name: "Vatican News", url: "https://www.vaticannews.va" },
+          { name: "ACI Stampa", url: "https://www.acistampa.com" }
+        ]
+    }
+    
   };
 
 
@@ -457,15 +769,17 @@ const data = {
 // ===============================
 
 const continentIcons = {
-  asia_west: "🌍",
   asia_central: "🌏",
-  asia_south: "🌏",
   asia_east: "🌏",
+  asia_south: "🌏",
   asia_southeast: "🌏",
-  central_america: "🌎",
+  asia_west: "🌏",
+  europe: "🌍",
   north_america: "🌎",
-  south_america: "🌎"
+  south_america: "🌎",
+  central_america: "🌎"
 };
+
 
 // ===============================
 // 2. Banderas por país
@@ -545,7 +859,59 @@ const flags = {
   singapore: "🇸🇬",
   thailand: "🇹🇭",
   timor_leste: "🇹🇱",
-  vietnam: "🇻🇳"
+  vietnam: "🇻🇳",
+  albania: "🇦🇱",
+  andorra: "🇦🇩",
+  austria: "🇦🇹",
+  belarus: "🇧🇾",
+  belgium: "🇧🇪",
+  bosnia_and_herzegovina: "🇧🇦",
+  bulgaria: "🇧🇬",
+  croatia: "🇭🇷",
+  cyprus: "🇨🇾",
+  czech_republic: "🇨🇿",
+  denmark: "🇩🇰",
+  estonia: "🇪🇪",
+  finland: "🇫🇮",
+  france: "🇫🇷",
+  georgia: "🇬🇪",
+  germany: "🇩🇪",
+  greece: "🇬🇷",
+  hungary: "🇭🇺",
+  iceland: "🇮🇸",
+  ireland: "🇮🇪",
+  italy: "🇮🇹",
+  kazakhstan: "🇰🇿",
+  kosovo: "🇽🇰",
+  latvia: "🇱🇻",
+  liechtenstein: "🇱🇮",
+  lithuania: "🇱🇹",
+  luxembourg: "🇱🇺",
+  malta: "🇲🇹",
+  moldova: "🇲🇩",
+  monaco: "🇲🇨",
+  montenegro: "🇲🇪",
+  netherlands: "🇳🇱",
+  north_macedonia: "🇲🇰",
+  norway: "🇳🇴",
+  poland: "🇵🇱",
+  portugal: "🇵🇹",
+  romania: "🇷🇴",
+  russia: "🇷🇺",
+  san_marino: "🇸🇲",
+  serbia: "🇷🇸",
+  slovakia: "🇸🇰",
+  slovenia: "🇸🇮",
+  spain: "🇪🇸",
+  sweden: "🇸🇪",
+  switzerland: "🇨🇭",
+  ukraine: "🇺🇦",
+  united_kingdom: "🇬🇧",
+  vatican: "🇻🇦",
+  england: "🇬🇧",
+  scotland: "🇬🇧",
+  wales: "🇬🇧",
+  northern_ireland: "🇬🇧"
 };
 
 
@@ -557,29 +923,34 @@ const countrySelect = document.getElementById("pais");
 const newspaperList = document.getElementById("diarios");
 
 // ===============================
-// 4. Poblar select de continentes
+// 4. Poblar select de continentes (orden manual fijo)
 // ===============================
-// ===============================
-// 4. Poblar select de continentes (orden alfabético)
-// ===============================
+
+const orderedContinents = [
+  "asia_central",
+  "asia_east",
+  "asia_south",
+  "asia_southeast",
+  "asia_west",
+  "europe",
+  "central_america",
+  "north_america",
+  "south_america"
+];
+
 const continentNames = {
-  south_america: "South America",
+  asia_central: "Asia Central",
+  asia_east: "Asia East",
+  asia_south: "Asia South",
+  asia_southeast: "Asia Southeast",
+  asia_west: "Asia West",
+  europe: "Europe",
   central_america: "Central America",
   north_america: "North America",
-  asia_west: "Asia West",
-  asia_central: "Asia Central",
-  asia_south: "Asia South",
-  asia_east: "Asia East",
-  asia_southeast: "Asia Southeast"
+  south_america: "South America"
 };
 
-const sortedContinents = Object.keys(data).sort((a, b) => {
-  const nameA = continentNames[a];
-  const nameB = continentNames[b];
-  return nameA.localeCompare(nameB);
-});
-
-for (let continent of sortedContinents) {
+for (let continent of orderedContinents) {
   const option = document.createElement("option");
   option.value = continent;
   option.textContent = `${continentIcons[continent] || "🌐"} ${continentNames[continent]}`;
@@ -683,37 +1054,27 @@ countrySelect.addEventListener("change", function () {
 // ===============================
 // 8. Toggle Modo Claro/Oscuro
 // ===============================
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const toggleButton = document.getElementById("modoToggle");
-  const savedMode = localStorage.getItem("mode");
+  const darkSheet = document.getElementById("dark-stylesheet");
 
-  // Aplicar modo guardado
-  if (savedMode === "dark") {
-    document.body.classList.add("dark-mode");
-    document.body.classList.remove("light-mode");
-    toggleButton.textContent = "☀️";
-  } else {
-    document.body.classList.add("light-mode");
-    document.body.classList.remove("dark-mode");
-    toggleButton.textContent = "🌙";
-  }
+  // Cargar estado guardado
+  const isDark = localStorage.getItem("mode") === "dark";
+  document.body.classList.toggle("dark-mode", isDark);
+  darkSheet.disabled = !isDark;
+  toggleButton.textContent = isDark ? "☀️" : "🌙";
 
-  // Alternar tema al hacer clic
+  // Toggle
   toggleButton.addEventListener("click", () => {
-    const isDark = document.body.classList.contains("dark-mode");
-
-    if (isDark) {
-      document.body.classList.remove("dark-mode");
-      document.body.classList.add("light-mode");
-      localStorage.setItem("mode", "light");
-      toggleButton.textContent = "🌙";
-    } else {
-      document.body.classList.remove("light-mode");
-      document.body.classList.add("dark-mode");
-      localStorage.setItem("mode", "dark");
-      toggleButton.textContent = "☀️";
-    }
+    const nowDark = !document.body.classList.contains("dark-mode");
+    document.body.classList.toggle("dark-mode", nowDark);
+    darkSheet.disabled = !nowDark;
+    localStorage.setItem("mode", nowDark ? "dark" : "light");
+    toggleButton.textContent = nowDark ? "☀️" : "🌙";
   });
 });
 
-// Última actualización forzada para sincronizar con GitHub
+
+
