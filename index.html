@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Access world news by country and continent. Quickly find online newspapers from across the globe." />
+  <meta name="keywords" content="world news, international newspapers, global news, newspaper directory, online press" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Tin@Ko" />
+  <meta name="copyright" content="© 2025 Tin@Ko. All rights reserved." />
+
+  <!-- ===================== -->
+  <!-- Open Graph (Facebook) -->
+   <!-- ===================== -->
+  <meta property="og:title" content="World News Navigator - Global Newspaper Directory" />
+  <meta property="og:description" content="Discover newspapers from every continent. Fast access to global news by country." />
+  <meta property="og:image" content="https://worldnewsnavigator.news/img/logo.webp" />
+  <meta property="og:url" content="https://worldnewsnavigator.news" />
+  <meta property="og:type" content="website" />
+
+  <!-- ===================== -->
+  <!-- Twitter Meta -->
+   <!-- ===================== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="World News Navigator - Global Newspaper Directory" />
+  <meta name="twitter:description" content="Explore international newspapers organized by continent and country. Stay informed worldwide." />
+  <meta name="twitter:image" content="https://worldnewsnavigator.news/img/logo.webp" />
+
+  <title>World News Navigator | Explore Global Newspapers by Country & Continent</title>
+
+  <link rel="stylesheet" href="css/styles.css?v=6" />
+  <link rel="stylesheet" href="css/dark.css?v=1">
+  <link rel="icon" type="image/webp" href="img/favicon.webp" />
+
+  <!-- ===================== -->
+  <!-- Google Analytics -->
+  <!-- ===================== -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VB9PN69YP3" crossorigin="anonymous"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-VB9PN69YP3");
+  </script>
+</head>
+
+<body>
+  <main class="contenido">
+    <h1>
+      <img src="img/logo.webp" alt="World News Navigator Logo" style="height: 50px; vertical-align: middle;" />
+      Explore Global News by Country and Continent – World News Navigator
+    </h1>
+
+    <p class="descripcion">
+      Access international newspapers from every continent. Find news by country, all in one place – fast, free and reliable.
+    </p>
+
+    <button id="modoToggle" title="Toggle theme" aria-label="Toggle dark/light mode">🌙</button>
+
+    <div class="menu-container">
+        <div class="form-group">
+          <label for="continente">Select a continent:</label>
+          <select id="continente"><option value="">-- Select --</option></select>
+        </div>
+      
+        <div class="form-group">
+          <label for="pais">Select a country:</label>
+          <select id="pais" disabled><option value="">-- Select --</option></select>
+        </div>
+      </div>
+
+    <p class="idioma-aviso" style="text-align: center; font-size: 0.9em; color: gray; margin-top: 2em;">
+      ℹ️ <strong>Note:</strong> The newspaper sites are in their original language. You can translate them using your browser.
+    </p>
+
+    <ul id="diarios"></ul>
+  </main>
+
+  <footer>
+    © 2025 Tin@Ko. – All rights reserved<br />
+    <a href="politica.html" rel="noopener" target="_blank">Privacy Policy</a> |
+    <a href="terminos.html" rel="noopener" target="_blank">Terms</a> |
+    <a href="aviso-legal.html" rel="noopener" target="_blank">Legal Notice</a> |
+    <a href="contacto.html" rel="noopener" target="_blank">Contact</a>
+  </footer>
+
+  <script src="js/script.js?v=5" defer></script>
+</body>
+</html>

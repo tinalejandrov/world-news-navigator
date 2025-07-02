@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://worldnewsnavigator.news/sitemap.xml
