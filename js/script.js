@@ -1181,7 +1181,91 @@ const data = {
         { name: "Togo Breaking News", url: "https://togobreakingnews.info" },
         { name: "Togo First", url: "https://www.togofirst.com" }
       ]      
-    }
+    },
+    oceania: {
+      australia: [
+        { name: "The Sydney Morning Herald", url: "https://www.smh.com.au" },
+        { name: "The Australian", url: "https://www.theaustralian.com.au" },
+        { name: "The Age", url: "https://www.theage.com.au" },
+        { name: "ABC News", url: "https://www.abc.net.au/news" },
+        { name: "News.com.au", url: "https://www.news.com.au" },
+        { name: "The Guardian Australia", url: "https://www.theguardian.com/au" },
+        { name: "Courier Mail", url: "https://www.couriermail.com.au" },
+        { name: "The West Australian", url: "https://thewest.com.au" }
+      ],
+      new_zealand: [
+        { name: "NZ Herald", url: "https://www.nzherald.co.nz" },
+        { name: "Stuff", url: "https://www.stuff.co.nz" },
+        { name: "The Press", url: "https://www.press.co.nz" },
+        { name: "Otago Daily Times", url: "https://www.odt.co.nz" },
+        { name: "Newshub", url: "https://www.newshub.co.nz" },
+        { name: "Radio NZ", url: "https://www.rnz.co.nz" }
+      ],
+      papua_new_guinea: [
+        { name: "Post-Courier", url: "https://postcourier.com.pg" },
+        { name: "The National", url: "https://www.thenational.com.pg" },
+        { name: "Loop PNG", url: "https://www.looppng.com" }
+      ],
+      fiji: [
+        { name: "Fiji Times", url: "https://www.fijitimes.com" },
+        { name: "Fiji Sun", url: "https://www.fijisun.com.fj" },
+        { name: "FBC News", url: "https://www.fbcnews.com.fj" }
+      ],
+      samoa: [
+        { name: "Samoa Observer", url: "https://www.samoaobserver.ws" },
+        { name: "Talamua Media", url: "https://talamua.com" }
+      ],
+      tonga: [
+        { name: "Matangi Tonga", url: "https://matangitonga.to" },
+        { name: "Kaniva Tonga", url: "https://kanivatonga.nz" }
+      ],
+      solomon_islands: [
+        { name: "Solomon Star News", url: "https://www.solomonstarnews.com" },
+        { name: "Island Sun", url: "https://theislandsun.com.sb" }
+      ],
+      vanuatu: [
+        { name: "Vanuatu Daily Post", url: "https://www.dailypost.vu" }
+      ],
+      kiribati: [
+        { name: "Kiribati Independent", url: "https://www.kiribati-independent.com" }
+      ],
+      micronesia: [
+        { name: "The Kaselehlie Press", url: "https://www.kpress.info" }
+      ],
+      palau: [
+        { name: "Island Times", url: "https://islandtimes.org" }
+      ],
+      marshall_islands: [
+        { name: "Marianas Variety", url: "https://www.mvariety.com" }
+      ],
+      nauru: [
+        { name: "Nauru Bulletin", url: "http://www.naurugov.nr" }
+      ],
+      tuvalu: [
+        { name: "Fenui News", url: "https://www.facebook.com/FenuiNews/" }
+      ],
+      new_caledonia: [
+        { name: "Les Nouvelles Calédoniennes", url: "https://www.lnc.nc" }
+      ],
+      french_polynesia: [
+        { name: "Tahiti Infos", url: "https://www.tahiti-infos.com" }
+      ],
+      guam: [
+        { name: "Pacific Daily News", url: "https://www.guampdn.com" }
+      ],
+      northern_mariana_islands: [
+        { name: "Saipan Tribune", url: "https://www.saipantribune.com" }
+      ],
+      cook_islands: [
+        { name: "Cook Islands News", url: "https://www.cookislandsnews.com" }
+      ],
+      american_samoa: [
+        { name: "Samoa News", url: "https://www.samoanews.com" }
+      ],
+      wallis_and_futuna: [
+        { name: "Wallis et Futuna 1ère", url: "https://la1ere.francetvinfo.fr/wallisfutuna/" }
+      ]
+    }    
     };
 // ===============================
 // 1. Iconos por continente
@@ -1197,7 +1281,8 @@ const continentIcons = {
   north_america: "🌎",
   south_america: "🌎",
   central_america: "🌎",
-  africa: "🌍"
+  africa: "🌍",
+  oceania: "🌏"
 };
 
 
@@ -1392,7 +1477,28 @@ const flags = {
   uganda: "🇺🇬",
   zambia: "🇿🇲",
   zimbabwe: "🇿🇼",
-  reunion: "🇷🇪"
+  reunion: "🇷🇪",
+  australia: "🇦🇺",
+  new_zealand: "🇳🇿",
+  papua_new_guinea: "🇵🇬",
+  fiji: "🇫🇯",
+  samoa: "🇼🇸",
+  tonga: "🇹🇴",
+  solomon_islands: "🇸🇧",
+  vanuatu: "🇻🇺",
+  kiribati: "🇰🇮",
+  micronesia: "🇫🇲",
+  palau: "🇵🇼",
+  marshall_islands: "🇲🇭",
+  nauru: "🇳🇷",
+  tuvalu: "🇹🇻",
+  new_caledonia: "🇳🇨",
+  french_polynesia: "🇵🇫",
+  guam: "🇬🇺",
+  northern_mariana_islands: "🇲🇵",
+  cook_islands: "🇨🇰",
+  american_samoa: "🇦🇸",
+  wallis_and_futuna: "🇼🇫"
   };
 
 // ===============================
@@ -1416,7 +1522,8 @@ const orderedContinents = [
   "asia_east",
   "asia_south",
   "asia_southeast",
-  "asia_west"
+  "asia_west",
+  "oceania"
 ];
 
 const continentNames = {
@@ -1429,7 +1536,8 @@ const continentNames = {
   central_america: "Central America",
   north_america: "North America",
   south_america: "South America",
-  africa: "Africa"
+  africa: "Africa",
+  oceania: "Oceania"
 };
 
 for (let continent of orderedContinents) {
