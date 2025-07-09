@@ -862,11 +862,327 @@ const data = {
           { name: "Vatican News", url: "https://www.vaticannews.va" },
           { name: "ACI Stampa", url: "https://www.acistampa.com" }
         ]
+    },
+    africa: {
+      nigeria: [
+        { name: "The Punch", url: "https://punchng.com" },
+        { name: "The Guardian Nigeria", url: "https://guardian.ng" },
+        { name: "Vanguard", url: "https://www.vanguardngr.com" },
+        { name: "Premium Times", url: "https://www.premiumtimesng.com" },
+        { name: "Daily Post", url: "https://dailypost.ng" },
+        { name: "The Nation", url: "https://thenationonlineng.net" },
+        { name: "Leadership", url: "https://leadership.ng" },
+        { name: "This Day", url: "https://www.thisdaylive.com" }
+      ],
+      egypt: [
+        { name: "Al-Ahram", url: "https://english.ahram.org.eg" },
+        { name: "Daily News Egypt", url: "https://dailynewsegypt.com" },
+        { name: "Egypt Independent", url: "https://www.egyptindependent.com" },
+        { name: "The Cairo Post", url: "https://thecairopost.youm7.com" },
+        { name: "Youm7", url: "https://www.youm7.com" },
+        { name: "Masrawy", url: "https://www.masrawy.com" },
+        { name: "Shorouk News", url: "https://www.shorouknews.com" },
+        { name: "Al-Masry Al-Youm", url: "https://www.almasryalyoum.com" }
+      ],
+      south_africa: [
+        { name: "News24", url: "https://www.news24.com" },
+        { name: "TimesLIVE", url: "https://www.timeslive.co.za" },
+        { name: "IOL", url: "https://www.iol.co.za" },
+        { name: "Mail & Guardian", url: "https://mg.co.za" },
+        { name: "Eyewitness News", url: "https://ewn.co.za" },
+        { name: "SowetanLIVE", url: "https://www.sowetanlive.co.za" },
+        { name: "The Citizen", url: "https://www.citizen.co.za" },
+        { name: "BusinessTech", url: "https://businesstech.co.za" }
+      ],
+      kenya: [
+        { name: "Daily Nation", url: "https://nation.africa" },
+        { name: "The Standard", url: "https://www.standardmedia.co.ke" },
+        { name: "The Star", url: "https://www.the-star.co.ke" },
+        { name: "Capital News", url: "https://www.capitalfm.co.ke/news" },
+        { name: "Kenyans.co.ke", url: "https://www.kenyans.co.ke" },
+        { name: "Citizen Digital", url: "https://citizen.digital" },
+        { name: "Tuko News", url: "https://www.tuko.co.ke" },
+        { name: "Business Daily Africa", url: "https://www.businessdailyafrica.com" }
+      ],
+      uganda: [
+        { name: "Daily Monitor", url: "https://www.monitor.co.ug" },
+        { name: "New Vision", url: "https://www.newvision.co.ug" },
+        { name: "The Observer", url: "https://observer.ug" },
+        { name: "ChimpReports", url: "https://chimpreports.com" },
+        { name: "Red Pepper", url: "https://redpepper.co.ug" }
+      ],
+      tanzania: [
+        { name: "The Citizen", url: "https://www.thecitizen.co.tz" },
+        { name: "Daily News", url: "https://dailynews.co.tz" },
+        { name: "The Guardian Tanzania", url: "https://www.ippmedia.com/en/the-guardian" },
+        { name: "Habari Leo", url: "https://habarileo.co.tz" },
+        { name: "Mwananchi", url: "https://www.mwananchi.co.tz" }
+      ],
+      ethiopia: [
+        { name: "Addis Fortune", url: "https://addisfortune.news" },
+        { name: "The Reporter Ethiopia", url: "https://www.thereporterethiopia.com" },
+        { name: "Capital Ethiopia", url: "https://www.capitalethiopia.com" },
+        { name: "Addis Standard", url: "https://addisstandard.com" },
+        { name: "ENA - Ethiopian News Agency", url: "https://www.ena.et" }
+      ],
+      ghana: [
+        { name: "GhanaWeb", url: "https://www.ghanaweb.com" },
+        { name: "Graphic Online", url: "https://www.graphic.com.gh" },
+        { name: "Citi Newsroom", url: "https://citinewsroom.com" },
+        { name: "MyJoyOnline", url: "https://www.myjoyonline.com" },
+        { name: "Peace FM Online", url: "https://www.peacefmonline.com" },
+        { name: "Ghanaian Times", url: "https://www.ghanaiantimes.com.gh" },
+        { name: "The Chronicle", url: "https://thechronicle.com.gh" },
+        { name: "Pulse Ghana", url: "https://www.pulse.com.gh" }
+      ],
+      morocco: [
+        { name: "Le Matin", url: "https://lematin.ma" },
+        { name: "Aujourd'hui le Maroc", url: "https://aujourdhui.ma" },
+        { name: "Hespress", url: "https://www.hespress.com" },
+        { name: "TelQuel", url: "https://telquel.ma" },
+        { name: "L'Économiste", url: "https://leconomiste.com" },
+        { name: "Media24", url: "https://www.media24.com" },
+        { name: "Yabiladi", url: "https://www.yabiladi.com" }
+      ],
+      algeria: [
+        { name: "El Watan", url: "https://www.elwatan.com" },
+        { name: "Liberté Algérie", url: "https://www.liberte-algerie.com" },
+        { name: "Echorouk Online", url: "https://www.echoroukonline.com" },
+        { name: "El Moudjahid", url: "https://www.elmoudjahid.com" },
+        { name: "Algérie Presse Service", url: "https://www.aps.dz" },
+        { name: "Le Quotidien d'Oran", url: "https://www.lequotidien-oran.com" }
+      ],
+      tunisia: [
+        { name: "La Presse de Tunisie", url: "https://lapresse.tn" },
+        { name: "Business News", url: "https://www.businessnews.com.tn" },
+        { name: "Tunis Afrique Presse", url: "https://www.tap.info.tn" },
+        { name: "Webdo", url: "https://www.webdo.tn" },
+        { name: "Kapitalis", url: "https://kapitalis.com" },
+        { name: "Réalités Online", url: "https://www.realites.com.tn" }
+      ],
+      angola: [
+        { name: "Jornal de Angola", url: "https://www.jornaldeangola.ao" },
+        { name: "O País", url: "https://opais.co.ao" },
+        { name: "Novo Jornal", url: "https://www.novojornal.co.ao" },
+        { name: "Angop", url: "https://www.angop.ao" },
+        { name: "Correio da Kianda", url: "https://correiokianda.info" }
+      ],
+      senegal: [
+        { name: "Le Soleil", url: "https://lesoleil.sn" },
+        { name: "Seneweb", url: "https://www.seneweb.com" },
+        { name: "Dakaractu", url: "https://www.dakaractu.com" },
+        { name: "PressAfrik", url: "https://www.pressafrik.com" },
+        { name: "Sud Quotidien", url: "https://www.sudonline.sn" },
+        { name: "Rewmi", url: "https://www.rewmi.com" }
+      ],
+      mali: [
+        { name: "L'Essor", url: "https://lessor.ml" },
+        { name: "Journal du Mali", url: "https://www.journaldumali.com" },
+        { name: "Maliweb", url: "https://www.maliweb.net" }
+      ],
+      rwanda: [
+        { name: "The New Times", url: "https://www.newtimes.co.rw" },
+        { name: "KT Press", url: "https://www.ktpress.rw" },
+        { name: "Igihe", url: "https://en.igihe.com" }
+      ],
+      burundi: [
+        { name: "Iwacu", url: "https://www.iwacu-burundi.org" },
+        { name: "Burundi Eco", url: "https://burundieco.com" },
+        { name: "Net Press", url: "https://netpress.bi" },
+        { name: "Jimbere", url: "https://www.jimberemag.org" }
+      ],
+      mozambique: [
+        { name: "Jornal Notícias", url: "https://www.jornalnoticias.co.mz" },
+        { name: "O País Moçambique", url: "https://opais.co.mz" },
+        { name: "Carta de Moçambique", url: "https://cartamz.com" }
+      ],
+      zambia: [
+        { name: "Times of Zambia", url: "https://www.times.co.zm" },
+        { name: "Zambia Daily Mail", url: "https://www.daily-mail.co.zm" },
+        { name: "Lusaka Times", url: "https://www.lusakatimes.com" },
+        { name: "Zambian Watchdog", url: "https://www.zambianwatchdog.com" },
+        { name: "News Diggers", url: "https://diggers.news" },
+        { name: "Daily Nation", url: "https://dailynationzambia.com" }
+      ],
+      zimbabwe: [
+        { name: "The Herald", url: "https://www.herald.co.zw" },
+        { name: "NewsDay", url: "https://www.newsday.co.zw" },
+        { name: "The Chronicle", url: "https://www.chronicle.co.zw" }
+      ],
+      malawi: [
+        { name: "The Nation", url: "https://www.mwnation.com" },
+        { name: "Nyasa Times", url: "https://www.nyasatimes.com" },
+        { name: "Malawi24", url: "https://malawi24.com" }
+      ],
+      botswana: [
+        { name: "Mmegi", url: "https://www.mmegi.bw" },
+        { name: "The Voice Botswana", url: "https://thevoicebw.com" },
+        { name: "Sunday Standard", url: "https://www.sundaystandard.info" }
+      ],
+      namibia: [
+        { name: "The Namibian", url: "https://www.namibian.com.na" },
+        { name: "New Era", url: "https://neweralive.na" },
+        { name: "Namibia Economist", url: "https://economist.com.na" }
+      ],
+      eswatini: [
+        { name: "Times of Eswatini", url: "https://www.times.co.sz" },
+        { name: "Swazi Observer", url: "https://www.observer.org.sz" }
+      ],
+      lesotho: [
+        { name: "Lesotho Times", url: "https://lestimes.com" },
+        { name: "Public Eye", url: "https://publiceyenews.com" }
+      ],
+      mauritius: [
+        { name: "L'Express", url: "https://lexpress.mu" },
+        { name: "Le Mauricien", url: "https://www.lemauricien.com" },
+        { name: "Defi Media", url: "https://defimedia.info" }
+      ],
+      seychelles: [
+        { name: "Seychelles Nation", url: "https://www.nation.sc" },
+        { name: "Today in Seychelles", url: "https://www.todayinseychelles.com" }
+      ],
+      comoros: [
+        { name: "Al-Watwan", url: "https://www.alwatwan.net" },
+        { name: "La Gazette des Comores", url: "https://lagazettedescomores.com" }
+      ],
+      reunion: [
+        { name: "Clicanoo", url: "https://www.clicanoo.re" },
+        { name: "Zinfos974", url: "https://www.zinfos974.com" }
+      ],
+      benin: [
+        { name: "La Nation Bénin", url: "https://lanation.bj" },
+        { name: "24 Heures au Bénin", url: "https://24haubenin.info" },
+        { name: "Matin Libre", url: "https://matinlibre.com" }
+      ],
+      burkina_faso: [
+        { name: "Sidwaya", url: "https://www.sidwaya.info" },
+        { name: "L’Observateur Paalga", url: "https://lobservateur.bf" },
+        { name: "Aujourd'hui au Faso", url: "https://aujourdhui.bf" }
+      ],
+      cabo_verde: [
+        { name: "A Nação", url: "https://anacao.cv" },
+        { name: "Expresso das Ilhas", url: "https://expressodasilhas.cv" },
+        { name: "Santiago Magazine", url: "https://santiagomagazine.cv" }
+      ],
+      cameroon: [
+        { name: "Cameroon Tribune", url: "https://www.cameroon-tribune.cm" },
+        { name: "Journal du Cameroun", url: "https://www.journalducameroun.com" },
+        { name: "Cameroon Online", url: "https://www.cameroononline.org" },
+        { name: "237online", url: "https://www.237online.com" },
+        { name: "Actu Cameroun", url: "https://actucameroun.com" }
+      ],
+      central_african_republic: [
+        { name: "Centrafrique Presse", url: "https://www.centrafrique-presse.info" },
+        { name: "Radio Ndeke Luka", url: "https://www.radiondekeluka.org" },
+        { name: "Corbeau News", url: "https://corbeaunews-centrafrique.com" }
+      ],
+      chad: [
+        { name: "Alwihda Info", url: "https://www.alwihdainfo.com" },
+        { name: "Tchad Infos", url: "https://tchadinfos.com" },
+        { name: "Le Progrès", url: "https://www.leprogres.td" }
+      ],
+      congo: [
+        { name: "Les Dépêches de Brazzaville", url: "https://www.adiac-congo.com" },
+        { name: "Congo Media Time", url: "https://congomediatime.com" },
+        { name: "Journal de Brazza", url: "https://journaldebrazza.com" }
+      ],
+      cote_d_ivoire: [
+        { name: "Fraternité Matin", url: "https://www.fratmat.info" },
+        { name: "L’Intelligent d’Abidjan", url: "https://www.lintelligentdabidjan.info" },
+        { name: "Soir Info", url: "https://www.soirinfo.com" },
+        { name: "Le Patriote", url: "https://www.lepatriote.ci" }
+      ],
+      djibouti: [
+        { name: "La Nation", url: "https://www.lanation.dj" },
+        { name: "Djibouti News", url: "https://djiboutinouvelles.com" },
+        { name: "Horn Diplomat", url: "https://www.horndiplomat.com" }
+      ],
+      equatorial_guinea: [
+        { name: "Ahora EG", url: "https://www.ahoraeg.com" },
+        { name: "Guineanet", url: "https://www.guineanet.com" },
+        { name: "La Gaceta de Guinea Ecuatorial", url: "https://lagacetadeguinea.com" }
+      ],
+      eritrea: [
+        { name: "Shabait", url: "https://www.shabait.com" },
+        { name: "TesfaNews", url: "https://www.tesfanews.net" },
+        { name: "Eritrea Profile", url: "https://www.eritreadaily.net" }
+      ],
+      gabon: [
+        { name: "Gabon Review", url: "https://gabonreview.com" },
+        { name: "L'Union", url: "https://www.union.sonapresse.com" },
+        { name: "Gabon Media Time", url: "https://gabonmediatime.com" }
+      ],
+      gambia: [
+        { name: "The Point", url: "https://thepoint.gm" },
+        { name: "Foroyaa Newspaper", url: "https://foroyaa.net" },
+        { name: "The Voice Gambia", url: "https://voicegambia.com" }
+      ],
+      guinea: [
+        { name: "Guinée News", url: "https://guineenews.org" },
+        { name: "Mediaguinee", url: "https://mediaguinee.com" },
+        { name: "Mosaiqueguinee", url: "https://mosaiqueguinee.com" }
+      ],
+      guinea_bissau: [
+        { name: "No Pintcha", url: "https://nopintcha.gw" },
+        { name: "O Democrata", url: "https://www.odemocratagb.com" },
+        { name: "Bissau Digital", url: "https://bissaudigital.com" }
+      ],
+      liberia: [
+        { name: "Daily Observer Liberia", url: "https://www.liberianobserver.com" },
+        { name: "FrontPage Africa", url: "https://frontpageafricaonline.com" },
+        { name: "The New Dawn", url: "https://thenewdawnliberia.com" }
+      ],
+      libya: [
+        { name: "Libya Herald", url: "https://www.libyaherald.com" },
+        { name: "The Libya Observer", url: "https://www.libyaobserver.ly" },
+        { name: "Alwasat", url: "https://alwasat.ly" }
+      ],
+      madagascar: [
+        { name: "L'Express de Madagascar", url: "https://lexpress.mg" },
+        { name: "Midi Madagasikara", url: "https://midi-madagasikara.mg" },
+        { name: "Madagascar Tribune", url: "https://www.madagascar-tribune.com" }
+      ],
+      mauritania: [
+        { name: "Sahara Media", url: "https://www.saharamedias.net" },
+        { name: "Alakhbar", url: "https://alakhbar.info" },
+        { name: "CRIDEM", url: "https://cridem.org" }
+      ],
+      niger: [
+        { name: "Le Sahel", url: "https://lesahel.org" },
+        { name: "ActuNiger", url: "https://www.actuniger.com" },
+        { name: "Niger Express", url: "https://nigerexpress.info" }
+      ],
+      sao_tome_and_principe: [
+        { name: "Téla Nón", url: "https://www.telanon.info" },
+        { name: "Jornal Transparência", url: "https://jornaltransparencia.st" }
+      ],
+      sierra_leone: [
+        { name: "Awoko Newspaper", url: "https://awokonewspaper.sl" },
+        { name: "Standard Times Press", url: "https://standardtimespress.org" },
+        { name: "Concord Times", url: "https://www.concordtimes.com" }
+      ],
+      somalia: [
+        { name: "Garowe Online", url: "https://www.garoweonline.com" },
+        { name: "Hiiraan Online", url: "https://www.hiiraan.com" },
+        { name: "Horseed Media", url: "https://horseedmedia.net" }
+      ],
+      south_sudan: [
+        { name: "Eye Radio", url: "https://eyeradio.org" },
+        { name: "Radio Tamazuj", url: "https://radiotamazuj.org" },
+        { name: "Juba Monitor", url: "https://jubamonitor.com" }
+      ],
+      sudan: [
+        { name: "Sudan Tribune", url: "https://sudantribune.com" },
+        { name: "Radio Dabanga", url: "https://www.dabangasudan.org" },
+        { name: "Alrakoba", url: "https://www.alrakoba.net" }
+      ],
+      togo: [
+        { name: "Republicoftogo", url: "https://republicoftogo.com" },
+        { name: "Togo Breaking News", url: "https://togobreakingnews.info" },
+        { name: "Togo First", url: "https://www.togofirst.com" }
+      ]      
     }
-    
-  };
-
-
+    };
 // ===============================
 // 1. Iconos por continente
 // ===============================
@@ -880,7 +1196,8 @@ const continentIcons = {
   europe: "🌍",
   north_america: "🌎",
   south_america: "🌎",
-  central_america: "🌎"
+  central_america: "🌎",
+  africa: "🌍"
 };
 
 
@@ -923,16 +1240,15 @@ const flags = {
   trinidad_and_tobago: "🇹🇹",
   mexico: "🇲🇽",
   canada: "🇨🇦",
-  united_states: "🇺🇸",   
-  alaska: "🇺🇸",          
+  united_states: "🇺🇸",
+  alaska: "🇺🇸",
   greenland: "🇬🇱",
   saudi_arabia: "🇸🇦",
   armenia: "🇦🇲",
   azerbaijan: "🇦🇿",
   bahrain: "🇧🇭",
-  qatar: "🇶🇦" ,
+  qatar: "🇶🇦",
   emirates: "🇦🇪",
-  georgia: "🇬🇪",
   iraq: "🇮🇶",
   israel: "🇮🇱",
   jordan: "🇯🇴",
@@ -941,11 +1257,6 @@ const flags = {
   palestine: "🇵🇸",
   syria: "🇸🇾",
   turkey: "🇹🇷",
-  kazakhstan: "🇰🇿",
-  kyrgyzstan: "🇰🇬",
-  tajikistan: "🇹🇯",
-  turkmenistan: "🇹🇲",
-  uzbekistan: "🇺🇿",
   afghanistan: "🇦🇫",
   bangladesh: "🇧🇩",
   bhutan: "🇧🇹",
@@ -972,6 +1283,12 @@ const flags = {
   thailand: "🇹🇭",
   timor_leste: "🇹🇱",
   vietnam: "🇻🇳",
+  kazakhstan: "🇰🇿",
+  kyrgyzstan: "🇰🇬",
+  tajikistan: "🇹🇯",
+  turkmenistan: "🇹🇲",
+  uzbekistan: "🇺🇿",
+  georgia: "🇬🇪",
   albania: "🇦🇱",
   andorra: "🇦🇩",
   austria: "🇦🇹",
@@ -986,14 +1303,12 @@ const flags = {
   estonia: "🇪🇪",
   finland: "🇫🇮",
   france: "🇫🇷",
-  georgia: "🇬🇪",
   germany: "🇩🇪",
   greece: "🇬🇷",
   hungary: "🇭🇺",
   iceland: "🇮🇸",
   ireland: "🇮🇪",
   italy: "🇮🇹",
-  kazakhstan: "🇰🇿",
   kosovo: "🇽🇰",
   latvia: "🇱🇻",
   liechtenstein: "🇱🇮",
@@ -1023,9 +1338,62 @@ const flags = {
   england: "🇬🇧",
   scotland: "🇬🇧",
   wales: "🇬🇧",
-  northern_ireland: "🇬🇧"
-};
-
+  northern_ireland: "🇬🇧",
+  algeria: "🇩🇿",
+  angola: "🇦🇴",
+  benin: "🇧🇯",
+  botswana: "🇧🇼",
+  burkina_faso: "🇧🇫",
+  burundi: "🇧🇮",
+  cabo_verde: "🇨🇻",
+  cameroon: "🇨🇲",
+  central_african_republic: "🇨🇫",
+  chad: "🇹🇩",
+  comoros: "🇰🇲",
+  congo: "🇨🇬",
+  cote_d_ivoire: "🇨🇮",
+  djibouti: "🇩🇯",
+  egypt: "🇪🇬",
+  equatorial_guinea: "🇬🇶",
+  eritrea: "🇪🇷",
+  eswatini: "🇸🇿",
+  ethiopia: "🇪🇹",
+  gabon: "🇬🇦",
+  gambia: "🇬🇲",
+  ghana: "🇬🇭",
+  guinea: "🇬🇳",
+  guinea_bissau: "🇬🇼",
+  kenya: "🇰🇪",
+  lesotho: "🇱🇸",
+  liberia: "🇱🇷",
+  libya: "🇱🇾",
+  madagascar: "🇲🇬",
+  malawi: "🇲🇼",
+  mali: "🇲🇱",
+  mauritania: "🇲🇷",
+  mauritius: "🇲🇺",
+  morocco: "🇲🇦",
+  mozambique: "🇲🇿",
+  namibia: "🇳🇦",
+  niger: "🇳🇪",
+  nigeria: "🇳🇬",
+  rwanda: "🇷🇼",
+  sao_tome_and_principe: "🇸🇹",
+  senegal: "🇸🇳",
+  seychelles: "🇸🇨",
+  sierra_leone: "🇸🇱",
+  somalia: "🇸🇴",
+  south_africa: "🇿🇦",
+  south_sudan: "🇸🇸",
+  sudan: "🇸🇩",
+  tanzania: "🇹🇿",
+  togo: "🇹🇬",
+  tunisia: "🇹🇳",
+  uganda: "🇺🇬",
+  zambia: "🇿🇲",
+  zimbabwe: "🇿🇼",
+  reunion: "🇷🇪"
+  };
 
 // ===============================
 // 3. Elementos del DOM
@@ -1039,15 +1407,16 @@ const newspaperList = document.getElementById("diarios");
 // ===============================
 
 const orderedContinents = [
+  "africa",
+  "central_america",
+  "north_america",
+  "south_america",
+  "europe", 
   "asia_central",
   "asia_east",
   "asia_south",
   "asia_southeast",
-  "asia_west",
-  "europe",
-  "central_america",
-  "north_america",
-  "south_america"
+  "asia_west"
 ];
 
 const continentNames = {
@@ -1059,7 +1428,8 @@ const continentNames = {
   europe: "Europe",
   central_america: "Central America",
   north_america: "North America",
-  south_america: "South America"
+  south_america: "South America",
+  africa: "Africa"
 };
 
 for (let continent of orderedContinents) {
