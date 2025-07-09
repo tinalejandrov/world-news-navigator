@@ -6,7 +6,19 @@ const data = {
     argentina: [
       { name: "Clarín", url: "https://www.clarin.com" },
       { name: "La Nación", url: "https://www.lanacion.com.ar" },
-      { name: "Infobae", url: "https://www.infobae.com" }
+      { name: "Infobae", url: "https://www.infobae.com" },
+      { name: "Página/12", url: "https://www.pagina12.com.ar" },
+      { name: "Perfil", url: "https://www.perfil.com" },
+      { name: "Crónica", url: "https://www.cronica.com.ar" },
+      { name: "Ámbito Financiero", url: "https://www.ambito.com" },
+      { name: "El Tribuno", url: "https://www.eltribuno.com" },
+      { name: "Diario Río Negro", url: "https://www.rionegro.com.ar" },
+      { name: "La Voz del Interior", url: "https://www.lavoz.com.ar" },
+      { name: "El Litoral", url: "https://www.ellitoral.com" },
+      { name: "Los Andes", url: "https://www.losandes.com.ar" },
+      { name: "El Día", url: "https://www.eldia.com" },
+      { name: "Diario Uno", url: "https://www.diariouno.com.ar" },
+      { name: "Tiempo Argentino", url: "https://www.tiempoar.com.ar" }
     ],
     brazil: [
       { name: "O Globo", url: "https://oglobo.globo.com" },
@@ -27,42 +39,88 @@ const data = {
     ],      
     chile: [
       { name: "El Mercurio", url: "https://www.elmercurio.com" },
-      { name: "La Tercera", url: "https://www.latercera.com" }
+      { name: "La Tercera", url: "https://www.latercera.com" },
+      { name: "Diario Financiero", url: "https://www.df.cl" },
+      { name: "El Mostrador", url: "https://www.elmostrador.cl" },
+      { name: "La Cuarta", url: "https://www.lacuarta.com" },
+      { name: "The Clinic", url: "https://www.theclinic.cl" },
+      { name: "Biobío Chile", url: "https://www.biobiochile.cl" },
+      { name: "Publimetro Chile", url: "https://www.publimetro.cl" },
+      { name: "La Segunda", url: "https://www.lasegunda.com" },
+      { name: "El Dínamo", url: "https://www.eldinamo.cl" },
+      { name: "El Desconcierto", url: "https://www.eldesconcierto.cl" },
+      { name: "La Discusión", url: "https://www.ladiscusion.cl" }
     ],
     uruguay: [
       { name: "El País", url: "https://www.elpais.com.uy" },
       { name: "El Observador", url: "https://www.elobservador.com.uy" },
-      { name: "La Diaria", url: "https://ladiaria.com.uy" }
+      { name: "La Diaria", url: "https://ladiaria.com.uy" },
+      { name: "Montevideo Portal", url: "https://www.montevideo.com.uy" },
+      { name: "Brecha", url: "https://brecha.com.uy" },
+      { name: "Caras y Caretas", url: "https://www.carasycaretas.com.uy" },
+      { name: "MercoPress", url: "https://en.mercopress.com" }
     ],
     paraguay: [
       { name: "ABC Color", url: "https://www.abc.com.py" },
       { name: "Última Hora", url: "https://www.ultimahora.com" },
-      { name: "La Nación", url: "https://www.lanacion.com.py" }
+      { name: "La Nación", url: "https://www.lanacion.com.py" },
+      { name: "Hoy", url: "https://www.hoy.com.py" },
+      { name: "Extra", url: "https://www.extra.com.py" },
+      { name: "5días", url: "https://www.5dias.com.py" }
     ],
     peru: [
       { name: "El Comercio", url: "https://elcomercio.pe" },
       { name: "La República", url: "https://larepublica.pe" },
-      { name: "Perú21", url: "https://peru21.pe" }
+      { name: "Perú21", url: "https://peru21.pe" },
+      { name: "Diario Correo", url: "https://diariocorreo.pe" },
+      { name: "RPP Noticias", url: "https://rpp.pe" },
+      { name: "Gestión", url: "https://gestion.pe" },
+      { name: "Trome", url: "https://trome.pe" },
+      { name: "La República Sur", url: "https://larepublica.pe/sur" },
+      { name: "El Popular", url: "https://elpopular.pe" },
+      { name: "Exitosa Noticias", url: "https://exitosanoticias.pe" }
     ],
     bolivia: [
       { name: "El Deber", url: "https://eldeber.com.bo" },
       { name: "Página Siete", url: "https://paginasiete.bo" },
-      { name: "Opinión", url: "https://www.opinion.com.bo" }
+      { name: "Opinión", url: "https://www.opinion.com.bo" },
+      { name: "Correo del Sur", url: "https://correodelsur.com" },
+      { name: "La Razón (Bolivia)", url: "https://www.la-razon.com" },
+      { name: "El Diario", url: "https://www.eldiario.net" }
     ],
     colombia: [
       { name: "El Tiempo", url: "https://www.eltiempo.com" },
       { name: "El Espectador", url: "https://www.elespectador.com" },
-      { name: "Semana", url: "https://www.semana.com" }
+      { name: "Semana", url: "https://www.semana.com" },
+      { name: "La República (Colombia)", url: "https://www.larepublica.co" },
+      { name: "El Colombiano", url: "https://www.elcolombiano.com" },
+      { name: "Vanguardia", url: "https://www.vanguardia.com" },
+      { name: "El Heraldo", url: "https://www.elheraldo.co" },
+      { name: "Publimetro Colombia", url: "https://www.publimetro.co" },
+      { name: "El País Cali", url: "https://www.elpais.com.co" },
+      { name: "KienyKe", url: "https://www.kienyke.com" },
+      { name: "Las2Orillas", url: "https://www.las2orillas.co" },
+      { name: "Noticias Caracol", url: "https://noticias.caracoltv.com" }
     ],
     ecuador: [
       { name: "El Comercio", url: "https://www.elcomercio.com" },
       { name: "El Universo", url: "https://www.eluniverso.com" },
-      { name: "Expreso", url: "https://www.expreso.ec" }
+      { name: "Expreso", url: "https://www.expreso.ec" },
+      { name: "La Hora", url: "https://www.lahora.com.ec" },
+      { name: "Metro Ecuador", url: "https://www.metroecuador.com.ec" },
+      { name: "Primicias", url: "https://www.primicias.ec" },
+      { name: "El Telégrafo", url: "https://www.eltelegrafo.com.ec" },
+      { name: "Diario Extra", url: "https://www.extra.ec" }
     ],
     venezuela: [
       { name: "El Nacional", url: "https://www.elnacional.com" },
       { name: "Últimas Noticias", url: "https://ultimasnoticias.com.ve" },
-      { name: "Tal Cual", url: "https://talcualdigital.com" }
+      { name: "Tal Cual", url: "https://talcualdigital.com" },
+      { name: "Efecto Cocuyo", url: "https://efectococuyo.com" },
+      { name: "El Universal", url: "https://www.eluniversal.com" },
+      { name: "La Patilla", url: "https://www.lapatilla.com" },
+      { name: "Runrun.es", url: "https://runrun.es" },
+      { name: "Noticiero Digital", url: "https://www.noticierodigital.com" }
     ],
     guyana: [
       { name: "Stabroek News", url: "https://www.stabroeknews.com" },
@@ -84,27 +142,33 @@ const data = {
     mainland: {
       guatemala: [
         { name: "Prensa Libre", url: "https://www.prensalibre.com" },
-        { name: "El Periódico", url: "https://elperiodico.com.gt" }
+        { name: "El Periódico", url: "https://elperiodico.com.gt" },
+        { name: "Nuestro Diario", url: "https://www.nuestrodiario.com.gt" }
       ],
       el_salvador: [
         { name: "La Prensa Gráfica", url: "https://www.laprensagrafica.com" },
-        { name: "El Diario de Hoy", url: "https://www.elsalvador.com" }
+        { name: "El Diario de Hoy", url: "https://www.elsalvador.com" },
+        { name: "El Mundo", url: "https://elmundo.sv" }
       ],
       honduras: [
         { name: "La Prensa", url: "https://www.laprensa.hn" },
-        { name: "El Heraldo", url: "https://www.elheraldo.hn" }
+        { name: "El Heraldo", url: "https://www.elheraldo.hn" },
+        { name: "La Tribuna", url: "https://www.latribuna.hn" }
       ],
       nicaragua: [
         { name: "La Prensa", url: "https://www.laprensa.com.ni" },
-        { name: "El Nuevo Diario", url: "https://www.elnuevodiario.com.ni" }
+        { name: "El Nuevo Diario", url: "https://www.elnuevodiario.com.ni" },
+        { name: "Confidencial", url: "https://confidencial.digital" }
       ],
       costa_rica: [
         { name: "La Nación", url: "https://www.nacion.com" },
-        { name: "Diario Extra", url: "https://www.diarioextra.com" }
+        { name: "Diario Extra", url: "https://www.diarioextra.com" },
+        { name: "CRHoy", url: "https://www.crhoy.com" }
       ],
       panama: [
         { name: "La Prensa", url: "https://www.prensa.com" },
-        { name: "Mi Diario", url: "https://www.midiario.com" }
+        { name: "Mi Diario", url: "https://www.midiario.com" },
+        { name: "Panamá América", url: "https://www.panamaamerica.com.pa" }
       ]
     },
     islands: {
@@ -114,7 +178,9 @@ const data = {
       ],
       dominican_republic: [
         { name: "Listín Diario", url: "https://listindiario.com" },
-        { name: "Diario Libre", url: "https://www.diariolibre.com" }
+        { name: "Diario Libre", url: "https://www.diariolibre.com" },
+        { name: "El Día", url: "https://eldia.com.do" },
+        { name: "El Caribe", url: "https://www.elcaribe.com.do" }
       ],
       haiti: [
         { name: "Le Nouvelliste", url: "https://lenouvelliste.com" },
@@ -122,12 +188,49 @@ const data = {
       ],
       puerto_rico: [
         { name: "El Nuevo Día", url: "https://www.elnuevodia.com" },
-        { name: "Primera Hora", url: "https://www.primerahora.com" }
+        { name: "Primera Hora", url: "https://www.primerahora.com" },
+        { name: "NotiCel", url: "https://www.noticel.com" }
       ],
       jamaica: [
         { name: "The Gleaner", url: "https://jamaica-gleaner.com" },
         { name: "Jamaica Observer", url: "https://www.jamaicaobserver.com" }
-      ]
+      ],
+      trinidad_and_tobago: [
+        { name: "Trinidad and Tobago Guardian", url: "https://www.guardian.co.tt" },
+        { name: "Trinidad Express", url: "https://trinidadexpress.com" }
+      ],
+      barbados: [
+        { name: "Barbados Today", url: "https://barbadostoday.bb" },
+        { name: "The Nation Barbados", url: "https://www.nationnews.com" }
+      ],
+      bahamas: [
+        { name: "The Nassau Guardian", url: "https://thenassauguardian.com" },
+        { name: "The Tribune", url: "https://www.tribune242.com" }
+      ],
+      saint_lucia: [
+        { name: "The Voice", url: "https://thevoiceslu.com" },
+        { name: "St. Lucia Times", url: "https://stluciatimes.com" }
+      ],
+      saint_vincent_and_the_grenadines: [
+        { name: "Searchlight", url: "https://www.searchlight.vc" },
+        { name: "The Vincentian", url: "http://thevincentian.com" }
+      ],
+      grenada: [
+        { name: "The New Today", url: "https://www.thenewtodaygrenada.com" },
+        { name: "NOW Grenada", url: "https://www.nowgrenada.com" }
+      ],
+      antigua_and_barbuda: [
+        { name: "Antigua Observer", url: "https://antiguaobserver.com" },
+        { name: "Caribbean News Global", url: "https://caribbeannewsglobal.com" }
+      ],
+      dominica: [
+        { name: "Dominica News Online", url: "https://dominicanewsonline.com" },
+        { name: "The Sun", url: "https://www.thesunnewspaper.com" }
+      ],
+      saint_kitts_and_nevis: [
+        { name: "SKN Vibes", url: "https://www.sknvibes.com" },
+        { name: "The St. Kitts-Nevis Observer", url: "https://www.thestkittsnevisobserver.com" }
+      ]                                                      
     }
   },
   north_america: {
@@ -809,6 +912,15 @@ const flags = {
   haiti: "🇭🇹",
   jamaica: "🇯🇲",
   puerto_rico: "🇵🇷",
+  antigua_and_barbuda: "🇦🇬",
+  bahamas: "🇧🇸",
+  barbados: "🇧🇧",
+  dominica: "🇩🇲",
+  grenada: "🇬🇩",
+  saint_kitts_and_nevis: "🇰🇳",
+  saint_lucia: "🇱🇨",
+  saint_vincent_and_the_grenadines: "🇻🇨",
+  trinidad_and_tobago: "🇹🇹",
   mexico: "🇲🇽",
   canada: "🇨🇦",
   united_states: "🇺🇸",   
