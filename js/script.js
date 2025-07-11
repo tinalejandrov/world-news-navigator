@@ -1640,32 +1640,7 @@ countrySelect.addEventListener("change", function () {
     });
   }
 });
-
-// ===============================
-// 8. Toggle Modo Claro/Oscuro
-// ===============================
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleButton = document.getElementById("modoToggle");
-  const darkSheet = document.getElementById("dark-stylesheet");
-
-  // Cargar estado guardado
-  const isDark = localStorage.getItem("mode") === "dark";
-  document.body.classList.toggle("dark-mode", isDark);
-  darkSheet.disabled = !isDark;
-  toggleButton.textContent = isDark ? "☀️" : "🌙";
-
-  // Toggle
-  toggleButton.addEventListener("click", () => {
-    const nowDark = !document.body.classList.contains("dark-mode");
-    document.body.classList.toggle("dark-mode", nowDark);
-    darkSheet.disabled = !nowDark;
-    localStorage.setItem("mode", nowDark ? "dark" : "light");
-    toggleButton.textContent = nowDark ? "☀️" : "🌙";
-  });
-});
-
+ 
 function hideCookieBanner() {
   document.getElementById("cookie-banner").style.display = "none";
   localStorage.setItem("cookieAccepted", "true");
