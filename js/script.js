@@ -1676,3 +1676,171 @@ window.addEventListener("load", function () {
     document.getElementById("cookie-banner").style.display = "block";
   }
 });
+
+function buscarPorPais() {
+  
+  const input = document.getElementById("buscador-pais");
+  const searchTerm = input.value.trim().toLowerCase();
+  const countrySelect = document.getElementById("pais");
+  const continentSelect = document.getElementById("continente");
+
+  let found = false;
+
+  for (let i = 0; i < countrySelect.options.length; i++) {
+    const optionText = countrySelect.options[i].textContent.toLowerCase();
+    if (optionText.includes(searchTerm)) {
+      countrySelect.selectedIndex = i;
+      found = true;
+      break;
+    }
+  }
+
+  if (!found) {
+    alert("Country not found. Please try another name.");
+  } else {
+    const newspaperList = document.getElementById("diarios");
+    mostrarDiarios(continentSelect.value, countrySelect.value, newspaperList);
+    
+  }
+}
+
+
+function mostrarDiarios(continent, country, newspaperList) {
+  newspaperList.innerHTML = "";
+
+  const newspapers =
+    continent === "central_america"
+      ? data[continent].mainland[country] || data[continent].islands[country]
+      : data[continent][country];
+
+  if (newspapers) {
+    newspapers.forEach(entry => {
+      const li = document.createElement("li");
+      const link = document.createElement("a");
+
+      link.href = entry.url;
+      link.textContent = `📰 ${entry.name}`;
+      link.target = "_blank";
+      link.classList.add("diario-link");
+      link.rel = "noopener";
+
+      link.addEventListener("click", () => {
+        document
+          .querySelectorAll("#diarios a")
+          .forEach(el => el.classList.remove("diario-seleccionado"));
+        link.classList.add("diario-seleccionado");
+      });
+
+      li.appendChild(link);
+      newspaperList.appendChild(li);
+    });
+  }
+}
+
+function capitalizarNombre(texto) {
+  return texto
+    .split(" ")
+    .map(palabra => palabra.charAt(0).toUpperCase() + palabra.slice(1).toLowerCase())
+    .join(" ");
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const botonLimpiar = document.getElementById("boton-limpiar");
+  const input = document.getElementById("buscador-pais");
+  const boton = document.getElementById("boton-buscar");
+  const countrySelect = document.getElementById("pais");
+  const continentSelect = document.getElementById("continente");
+  const newspaperList = document.getElementById("diarios");
+
+  input.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      boton.click();
+    }
+  });
+
+  input.addEventListener("input", function () {
+    const searchTerm = this.value.trim().toLowerCase();
+    if (input.value.trim().length > 0) {
+      botonLimpiar.classList.remove("oculto");
+    } else {
+      botonLimpiar.classList.add("oculto");
+    }    
+    const sugerenciasBox = document.getElementById("sugerencias");
+    sugerenciasBox.innerHTML = "";
+  
+    if (searchTerm.length < 2) return;
+  
+    const exactMatches = [];
+const partialMatches = [];
+
+for (const continent in data) {
+  for (const country in data[continent]) {
+    const countryName = country.replace(/_/g, " ");
+    const lowerName = countryName.toLowerCase();
+
+    const match = {
+      country,
+      countryName: capitalizarNombre(countryName),
+      continent,
+      flag: flags[country] || "🌐"
+    };
+
+    if (lowerName.startsWith(searchTerm)) {
+      exactMatches.push(match);
+    } else if (lowerName.includes(searchTerm)) {
+      partialMatches.push(match);
+    }
+  }
+}
+
+const resultados = [...exactMatches, ...partialMatches];
+
+    resultados.forEach(result => {
+      const div = document.createElement("div");
+      div.className = "sugerencia-item";
+      div.textContent = `${result.flag} ${result.countryName}`;
+      div.addEventListener("click", () => {
+        continentSelect.value = result.continent;
+        countrySelect.innerHTML = '<option value="">-- Select --</option>';
+        const option = document.createElement("option");
+        option.value = result.country;
+        option.textContent = `${result.flag} ${result.countryName}`;
+        countrySelect.appendChild(option);
+        countrySelect.disabled = false;
+        countrySelect.value = result.country;
+        sugerenciasBox.innerHTML = "";
+        input.value = result.countryName;
+        buscarPorPais(newspaperList);
+      });
+      sugerenciasBox.appendChild(div);
+    });
+    
+  });
+  
+  // ✅ Solo una vez
+  boton.addEventListener("click", function () {
+    buscarPorPais(newspaperList);
+  });
+  document.addEventListener("click", function (event) {
+    const sugerenciasBox = document.getElementById("sugerencias");
+    const buscadorWrapper = document.getElementById("buscador-wrapper");
+  
+    // Si el clic fue fuera del buscador y del botón, ocultar sugerencias
+    if (!buscadorWrapper.contains(event.target)) {
+      sugerenciasBox.innerHTML = "";
+    }
+  });
+
+  botonLimpiar.addEventListener("click", function () {
+    input.value = "";
+    countrySelect.innerHTML = '<option value="">-- Select --</option>';
+    continentSelect.value = "";
+    countrySelect.disabled = true;
+    newspaperList.innerHTML = "";
+    document.getElementById("sugerencias").innerHTML = "";
+    botonLimpiar.classList.add("oculto"); // ✅ Ocultar botón después de limpiar
+    input.focus(); // 👈 Le devuelve el foco al input automáticamente
+  });
+  
+});

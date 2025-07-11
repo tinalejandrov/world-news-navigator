@@ -28,8 +28,7 @@
 
   <title>World News Navigator | Explore Global Newspapers by Country & Continent</title>
 
-  <link rel="stylesheet" href="css/styles.css?v=11" />
-  <link id="dark-stylesheet" rel="stylesheet" href="css/dark.css?v=11" disabled>  
+  <link rel="stylesheet" href="css/styles.css?v=12" />
   <link rel="icon" type="image/webp" href="img/favicon.webp" />
 
   <!-- ===================== -->
@@ -48,43 +47,64 @@
 
 <body>
   <main class="contenido">
-    <h1>
+    <h1 class="fade-in delay-1">
       <img src="img/logo.webp" alt="World News Navigator Logo" style="height: 50px; vertical-align: middle;" />
       Explore Global News by Country and Continent – World News Navigator
     </h1>
-    <ins class="adsbygoogle"
-    style="display:block; text-align:center;"
-    data-ad-client="ca-pub-5162854515017223"
-    data-ad-slot="1234567890"
-    data-ad-format="auto"
-    data-full-width-responsive="true"></ins>
-<script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-    <p class="descripcion">
+  
+    <ins class="adsbygoogle fade-in delay-2"
+      style="display:block; text-align:center;"
+      data-ad-client="ca-pub-5162854515017223"
+      data-ad-slot="1234567890"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  
+    <p class="descripcion fade-in delay-3">
       Access international newspapers from every continent. Find news by country, all in one place – fast, free and reliable.
     </p>
+  
+    <!-- Buscador directo por país -->
+<div id="buscador-wrapper" class="fade-in delay-5">
+  <div class="buscador-inner">
+    <input type="text" id="buscador-pais" placeholder="Search by country..." />
+    
+    <button id="boton-limpiar" class="oculto" aria-label="Clear search">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+           viewBox="0 0 24 24">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    </button>
+    
+    <button id="boton-buscar">🔎</button>
 
-    <button id="modoToggle" title="Toggle theme" aria-label="Toggle dark/light mode">🌙</button>
+    <!-- ✅ CORRECTAMENTE POSICIONADO: -->
+    <div id="sugerencias" class="sugerencias-box"></div>
+  </div>
+</div>
 
-    <div class="menu-container">
-        <div class="form-group">
-          <label for="continente">Select a continent:</label>
-          <select id="continente"><option value="">-- Select --</option></select>
-        </div>
-      
-        <div class="form-group">
-          <label for="pais">Select a country:</label>
-          <select id="pais" disabled><option value="">-- Select --</option></select>
-        </div>
+  
+    <div class="menu-container fade-in delay-6">
+      <div class="form-group">
+        <label for="continente">Select a continent:</label>
+        <select id="continente"><option value="">-- Select --</option></select>
       </div>
-
-    <p class="idioma-aviso" style="text-align: center; font-size: 0.9em; color: gray; margin-top: 2em;">
+  
+      <div class="form-group">
+        <label for="pais">Select a country:</label>
+        <select id="pais" disabled><option value="">-- Select --</option></select>
+      </div>
+    </div>
+  
+    <p class="idioma-aviso fade-in delay-7" style="text-align: center; font-size: 0.9em; color: gray; margin-top: 2em;">
       ℹ️ <strong>Note:</strong> The newspaper sites are in their original language. You can translate them using your browser.
     </p>
-
-    <ul id="diarios"></ul>
+  
+    <ul id="diarios" class="fade-in delay-8"></ul>
   </main>
 
   <footer>
@@ -101,7 +121,7 @@
     <button onclick="hideCookieBanner()">OK</button>
   </div>  
   
-  <script src="js/script.js?v=11" defer></script>
+  <script src="js/script.js?v=1" defer></script>
 
 </body>
 </html>
