@@ -552,3 +552,9 @@ select {
   width: 100%;
   display: block;
 }
+.adsbygoogle.horizontal {
+  width: 100%;
+  max-width: 728px;
+  height: 90px;
+  margin: 40px auto;
+}
