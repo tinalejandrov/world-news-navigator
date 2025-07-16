@@ -1,0 +1,14 @@
+/* TEAM */
+Developer: Martín Alejandro Vera  
+Company: Tin@Ko  
+Website: https://worldnewsnavigator.news  
+Twitter: @tinalejandrov  
+Email: contact@worldnewsnavigator.com
+
+/* THANKS */
+Thanks to: GitHub Pages, OpenAI, and all visitors.
+
+/* SITE */
+Standards: HTML5, CSS3  
+Components: JavaScript, GitHub Pages  
+Languages: Spanish, English (soon)

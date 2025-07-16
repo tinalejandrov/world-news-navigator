@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Access world news by country and continent. Quickly find online newspapers from across the globe." />
+  <meta name="keywords" content="world news, international newspapers, global news, newspaper directory, online press" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Tin@Ko" />
+  <meta name="copyright" content="© 2025 Tin@Ko. All rights reserved." />
+
+  <!-- ===================== -->
+  <!-- Open Graph (Facebook) -->
+   <!-- ===================== -->
+  <meta property="og:title" content="World News Navigator - Global Newspaper Directory" />
+  <meta property="og:description" content="Discover newspapers from every continent. Fast access to global news by country." />
+  <meta property="og:image" content="https://worldnewsnavigator.news/img/logo.webp" />
+  <meta property="og:url" content="https://worldnewsnavigator.news" />
+  <meta property="og:type" content="website" />
+
+  <!-- ===================== -->
+  <!-- Twitter Meta -->
+   <!-- ===================== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="World News Navigator - Global Newspaper Directory" />
+  <meta name="twitter:description" content="Explore international newspapers organized by continent and country. Stay informed worldwide." />
+  <meta name="twitter:image" content="https://worldnewsnavigator.news/img/logo.webp" />
+
+  <title>World News Navigator | Explore Global Newspapers by Country & Continent</title>
+
+  <link rel="stylesheet" href="css/styles.css?v=20" />
+  <link rel="icon" type="image/webp" href="img/favicon.webp" />
+
+  <!-- ===================== -->
+  <!-- Google Analytics -->
+  <!-- ===================== -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VB9PN69YP3" crossorigin="anonymous"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-VB9PN69YP3");
+  </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5162855415017223"
+  crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <main class="contenido">
+    <h1 class="fade-in delay-1">
+      <img src="img/logo.webp" alt="World News Navigator Logo" style="height: 50px; vertical-align: middle;" />
+      Explore Global News by Country and Continent – World News Navigator
+    </h1>
+  
+    <p class="descripcion fade-in delay-3">
+      Access international newspapers from every continent. Find news by country, all in one place – fast, free and reliable.
+    </p>
+  
+    <!-- Buscador directo por país -->
+<div id="buscador-wrapper" class="fade-in delay-5">
+  <div class="buscador-inner">
+
+    <!-- 1) Contenedor input + limpiar -->
+    <div class="solo-input">
+      <div class="input-wrapper">
+        <input
+          type="text"
+          id="buscador-pais"
+          placeholder="Search by country..."
+        />
+        <div id="sugerencias" class="sugerencias-box"></div>
+      </div>
+      <button id="boton-limpiar" class="oculto" aria-label="Clear search">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+           viewBox="0 0 24 24">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    </button>
+
+    <!-- 2) Aquí va el dropdown -->
+      <div id="sugerencias" class="sugerencias-box"></div>
+    </div>
+
+    <!-- 3) Botón de buscar, fuera de solo-input -->
+    <button id="boton-buscar">🔎</button>
+  </div>
+</div>
+
+  
+    <div class="menu-container fade-in delay-6">
+      <div class="form-group">
+        <label for="continente">Select a continent:</label>
+        <select id="continente"><option value="">-- Select --</option></select>
+      </div>
+  
+      <div class="form-group">
+        <label for="pais">Select a country:</label>
+        <select id="pais" disabled><option value="">-- Select --</option></select>
+      </div>
+    </div>
+  
+    <p class="idioma-aviso fade-in delay-7" style="text-align: center; font-size: 0.9em; color: gray; margin-top: 2em;">
+      ℹ️ <strong>Note:</strong> The newspaper sites are in their original language. You can translate them using your browser.
+    </p>
+
+    <ul id="diarios" class="fade-in delay-8"></ul>
+
+  </main>
+
+<!-- Google AdSense Banner (entre idioma y footer, bien alineado) -->
+<div class="adsbygoogle-wrapper">
+  <ins class="adsbygoogle"
+       style="display:block; width:100%; max-width:728px; height:90px;"
+       data-ad-client="ca-pub-5162855415017223"
+       data-ad-slot="8532650963"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+  <footer>
+    © 2025 Tin@Ko. – All rights reserved<br />
+    <a href="about.html" rel="noopener" target="_blank">About Us</a> |
+    <a href="privacy.html" rel="noopener" target="_blank">Privacy Policy</a> |
+    <a href="terms.html" rel="noopener" target="_blank">Terms</a> |
+    <a href="legal-notice.html" rel="noopener" target="_blank">Legal Notice</a> |
+    <a href="contact.html" rel="noopener" target="_blank">Contact</a>
+  </footer>
+  
+  <div id="cookie-banner" class="cookie-banner">
+    This site uses cookies for analytics. By continuing to browse, you agree to our use of cookies.
+    <button onclick="hideCookieBanner()">OK</button>
+  </div>  
+  
+  <script src="js/script.js?v=20" defer></script>
+
+</body>
+</html>
