@@ -494,12 +494,6 @@ select {
   position: relative;
   flex: 1;
 }
-  
-  .solo-input:focus-within {
-    /* halo azul exacto alrededor del 1px gris */
-    box-shadow: 0 0 0 2px rgba(30,144,255,0.8);
-  }
-  
   /* Aplica al contenedor cuando hay sugerencias */
   .solo-input.has-suggestions {
     border-radius: 12px 0 0 0;
@@ -512,9 +506,9 @@ select {
 
   .solo-input.has-suggestions:focus-within #sugerencias {
     left: -1px;  /* más hacia la izquierda */
-    width: calc(100% + -2px); /* compensa la extensión */
+    width: 100%; /* compensa la extensión */
     box-shadow:
-      0 0 0 2px rgba(30,144,255,0.8),
+     /* 0 0 0 2px rgba(30,144,255,0.8),*/
       0 2px 6px rgba(0, 0, 0, 0.06);
     border-top: none;
   }  
@@ -524,17 +518,17 @@ select {
     left: -1px;
     width: calc(100% + 0px); /* Ajustamos para que sobresalga levemente */
     background-color: #ffffff;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc; /* borde neutral */
     border-top: none;
-    border-radius: 0 0 12px 12px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    border-radius: 0 0 0 12px;
+    /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06); */ /* sombra desactivada por estética */
     z-index: 9999;
     padding: 4px 0;
     overflow-y: auto;
     max-height: 200px;
-    animation: fadeInUp 0.3s ease forwards;
+    /* animation: fadeInUp 0.3s ease forwards; */ /* opcional: quitar animación */
   }
-
+  
   #sugerencias:empty {
     display: none;
   }
@@ -556,12 +550,12 @@ select {
   .sugerencia-item:hover {
     background-color: #e0f0ff;
   } 
-
+  
   #sugerencias div.active {
     background-color: #e0f0ff;
     color: #000;
     border-radius: 6px;
-  }    
+  }  
   
 /* =============================== */
 /* ==== Animación de entrada fade-in-up ==== */
@@ -609,3 +603,4 @@ footer a:hover {
   display: flex;
   justify-content: center;
 }
+
