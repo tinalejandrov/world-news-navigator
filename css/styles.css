@@ -161,56 +161,71 @@ body, html, ul li {
 }
 
 
-
-/* ✅ Botón de buscar con efecto igual a los botones de diarios */
+/* ============================= */
+/* 1) Botones: mismos estilos   */
+/* ============================= */
+#boton-limpiar,
 #boton-buscar {
-  background-color: #f4faff;
-  border: none;
-  padding: 10px 16px;
-  border-left: 1px solid #ccc;
-  border-radius: 0 12px 12px 0; /* ✔️ Borde redondeado solo en el extremo derecho */
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-  font-size: 22px; /* 🔍 más grande */
+  /* Alto igual al input */
+  height: 100%;
+  /* Ancho flexible con padding horizontal */
+  padding: 0 16px;
+  
+  /* Tipografía idéntica */
+  font-size: 22px;
   font-weight: 600;
   color: #000;
-  z-index: 0;
-  margin-left: 0px;
+  
+  /* Fondo y sombra */
+  background-color: #f4faff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  
+  /* Borde base */
+  border: 1px solid #ccc;
+  cursor: pointer;
+  
+  /* Flex para centrar icono/letra */
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  /* Transición idéntica */
+  transition: background-color 0.3s ease,
+              transform       0.3s ease,
+              box-shadow      0.3s ease;
 }
 
+/* Hover igual */
+#boton-limpiar:hover,
 #boton-buscar:hover {
   background-color: #e0f0ff;
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
+/* ============================= */
+/* 2) Botón LIMPIAR (intermedio)*/
+/* ============================= */
 #boton-limpiar {
-  background-color: #f4faff;
-  border: none;
-  padding: 10px 16px;
-  border-left: 1px solid #ccc;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-  font-size: 18px;
-  font-weight: 600;
-  color: #000;
-  z-index: 0;
+  /* Oculto hasta que JS quite .oculto */
+  /* (asegurate de tenerlo en tu HTML: <button id="boton-limpiar" class="oculto">…) */
+  border: none !important;
 }
 
+/* ============================= */
+/* 3) Botón BUSCAR (extremo)     */
+/* ============================= */
+#boton-buscar {
+  border-left: none;           /* no doble borde con limpiar */
+  border-radius: 0 12px 12px 0; /* solo redondeado derecha */
+}
+
+/* ============================= */
+/* 4) Ocultar limpiador         */
+/* ============================= */
 .oculto {
-  display: none;
+  display: none !important;
 }
 
-#boton-limpiar:hover {
-  background-color: #e0f0ff;
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-}
 
 /* =============================== */
 /* ==== Espaciado del buscador y menús ==== */
@@ -334,7 +349,7 @@ select {
   /* ===============================*/
   /* ==== Botón de modo claro/oscuro ==== */
   /* ===============================*/
-  #modoToggle {
+  /*#modoToggle {
     position: fixed;
     top: 20px;
     right: 20px;
@@ -359,7 +374,7 @@ select {
   #modoToggle:hover {
     background-color: #e0e0e0;
     transform: scale(1.1);
-  }
+  }*/
   /* ===============================*/
   /* ==== Responsive tablets / pantallas medianas ==== */
   /* ===============================*/
@@ -480,6 +495,7 @@ select {
   }
 
   .solo-input {
+    background-color: white;
     position: relative;
     display: flex;
     align-items: center;
@@ -494,14 +510,16 @@ select {
   position: relative;
   flex: 1;
 }
-  /* Aplica al contenedor cuando hay sugerencias */
-  .solo-input.has-suggestions {
-    border-radius: 12px 0 0 0;
-  }
+.solo-input.has-suggestions {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 0; /* aplana la esquina inferior izquierda */
+  overflow: hidden; /* ⚠️ fuerza que el fondo se recorte igual que el borde */
+}
   
   /* Aplica al input dentro del contenedor cuando hay sugerencias */
   .solo-input.has-suggestions input {
     border-bottom-left-radius: 0;
+    background-clip: padding-box; /* este detalle evita fugas del fondo blanco */
   }  
 
   .solo-input.has-suggestions:focus-within #sugerencias {
@@ -520,7 +538,7 @@ select {
     background-color: #ffffff;
     border: 1px solid #ccc; /* borde neutral */
     border-top: none;
-    border-radius: 0 0 0 12px;
+    border-radius: 0   0  0 12px !important;
     /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06); */ /* sombra desactivada por estética */
     z-index: 9999;
     padding: 4px 0;
@@ -604,3 +622,8 @@ footer a:hover {
   justify-content: center;
 }
 
+/* 1) Cuando el contenedor aplana su bottom-left, el input también */
+.solo-input.has-suggestions > #buscador-pais {
+  /* TL  TR  BR  BL */
+  border-radius: 12px 0 0 0 !important;
+}

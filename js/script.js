@@ -1799,6 +1799,7 @@ if (resultados.length > 0) {
       div.className = "sugerencia-item";
       div.textContent = `${result.flag} ${result.countryName}`;
       div.addEventListener("click", () => {
+        const soloInput = document.querySelector(".solo-input");
         continentSelect.value = result.continent;
         countrySelect.innerHTML = '<option value="">-- Select --</option>';
         const option = document.createElement("option");
@@ -1808,6 +1809,7 @@ if (resultados.length > 0) {
         countrySelect.disabled = false;
         countrySelect.value = result.country;
         sugerenciasBox.innerHTML = "";
+        soloInput.classList.remove("has-suggestions");  
         input.value = result.countryName;
         buscarPorPais(newspaperList);
       });
@@ -1817,18 +1819,18 @@ if (resultados.length > 0) {
   });
   
   // ✅ Solo una vez
-  boton.addEventListener("click", function () {
-    buscarPorPais(newspaperList);
-  });
   document.addEventListener("click", function (event) {
     const sugerenciasBox = document.getElementById("sugerencias");
     const buscadorWrapper = document.getElementById("buscador-wrapper");
+    const soloInput = document.querySelector(".solo-input"); // 👈 NUEVO
   
-    // Si el clic fue fuera del buscador y del botón, ocultar sugerencias
+    // Si el clic fue fuera del buscador y del botón, ocultar sugerencias y restaurar borde
     if (!buscadorWrapper.contains(event.target)) {
       sugerenciasBox.innerHTML = "";
+      soloInput.classList.remove("has-suggestions"); // 👈 NUEVO
     }
   });
+  
 
   botonLimpiar.addEventListener("click", function () {
     input.value = "";
@@ -1838,6 +1840,8 @@ if (resultados.length > 0) {
     newspaperList.innerHTML = "";
     document.getElementById("sugerencias").innerHTML = "";
     botonLimpiar.classList.add("oculto"); // ✅ Ocultar botón después de limpiar
+    const soloInput = document.querySelector(".solo-input");
+    soloInput.classList.remove("has-suggestions");
     input.focus(); // 👈 Le devuelve el foco al input automáticamente
   });
   let currentFocus = -1;
