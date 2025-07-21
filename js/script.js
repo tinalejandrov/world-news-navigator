@@ -853,7 +853,7 @@ const data = {
           { name: "Yuga.ru (Región Sur)", url: "https://www.yuga.ru" },
           { name: "Newsvl.ru (Vladivostok)", url: "https://www.newsvl.ru" },
           { name: "SeverPost (Murmansk)", url: "https://severpost.ru" },
-          { name: "Kommuna (Voronezh)", url: "https://communa.ru" },
+          { name: "Bloknot Voronezh", url: "https://bloknot-voronezh.ru" },
           { name: "Perm News", url: "https://properm.ru" },
           { name: "Nizhny Novgorod Online", url: "https://nn.ru" },
           { name: "Komsomolskaya Pravda", url: "https://www.kp.ru" },
