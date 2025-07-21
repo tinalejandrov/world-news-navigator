@@ -1889,3 +1889,13 @@ function removeActive(items) {
 }
 
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (navigator.language && navigator.language.toLowerCase().startsWith("ru")) {
+    const banner = document.getElementById("banner-ruso");
+    if (banner) {
+      banner.classList.remove("oculto");
+      console.log("🌐 Idioma ruso detectado: banner visible.");
+    }
+  }
+});
