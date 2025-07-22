@@ -1233,7 +1233,7 @@ const data = {
       papua_new_guinea: [
         { name: "Post-Courier", url: "https://postcourier.com.pg" },
         { name: "The National", url: "https://www.thenational.com.pg" },
-        { name: "Loop PNG", url: "https://www.looppng.com" }
+        { name: "NBC PNG", url: "https://www.nbc.com.pg" }
       ],
       fiji: [
         { name: "Fiji Times", url: "https://www.fijitimes.com" },
@@ -1256,10 +1256,10 @@ const data = {
         { name: "Vanuatu Daily Post", url: "https://www.dailypost.vu" }
       ],
       kiribati: [
-        { name: "Kiribati Independent", url: "https://www.kiribati-independent.com" }
+        { name: "Kiribati Government Times", url: "https://kiribatigovernmenttimes.com/" }
       ],
       micronesia: [
-        { name: "The Kaselehlie Press", url: "https://www.kpress.info" }
+        { name: "The Kaselehlie Press", url: "https://issuu.com/kpressfsm" }
       ],
       palau: [
         { name: "Island Times", url: "https://islandtimes.org" }
@@ -1268,13 +1268,13 @@ const data = {
         { name: "Marianas Variety", url: "https://www.mvariety.com" }
       ],
       nauru: [
-        { name: "Nauru Bulletin", url: "http://www.naurugov.nr" }
+        { name: "The Nauru Herald", url: "https://www.nauruherald.com/" }
       ],
       tuvalu: [
-        { name: "Fenui News", url: "https://www.facebook.com/FenuiNews/" }
+        { name: "PMN Tuvalu", url: "https://pmn.co.nz/read/tuvalu" }
       ],
       new_caledonia: [
-        { name: "Les Nouvelles Calédoniennes", url: "https://www.lnc.nc" }
+        { name: "Le Petit Journal", url: "https://lepetitjournal.com/nouvelle-caledonie" }
       ],
       french_polynesia: [
         { name: "Tahiti Infos", url: "https://www.tahiti-infos.com" }
@@ -1282,9 +1282,7 @@ const data = {
       guam: [
         { name: "Pacific Daily News", url: "https://www.guampdn.com" }
       ],
-      northern_mariana_islands: [
-        { name: "Saipan Tribune", url: "https://www.saipantribune.com" }
-      ],
+      
       cook_islands: [
         { name: "Cook Islands News", url: "https://www.cookislandsnews.com" }
       ],
@@ -1524,7 +1522,6 @@ const flags = {
   new_caledonia: "🇳🇨",
   french_polynesia: "🇵🇫",
   guam: "🇬🇺",
-  northern_mariana_islands: "🇲🇵",
   cook_islands: "🇨🇰",
   american_samoa: "🇦🇸",
   wallis_and_futuna: "🇼🇫"
