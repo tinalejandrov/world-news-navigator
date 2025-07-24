@@ -830,37 +830,8 @@ const data = {
         russia: [
           { name: "Kommersant", url: "https://www.kommersant.ru" },
           { name: "Rossiyskaya Gazeta", url: "https://rg.ru" },
-          { name: "The Moscow Times", url: "https://www.themoscowtimes.com" },
-          { name: "Izvestia", url: "https://iz.ru" },
-          { name: "Argumenty i Fakty", url: "https://aif.ru" },
-          { name: "Vedomosti", url: "https://www.vedomosti.ru" },
-          { name: "Fontanka (San Petersburgo)", url: "https://www.fontanka.ru" },
-          { name: "MK - Moskovsky Komsomolets", url: "https://www.mk.ru" },
-          { name: "TASS", url: "https://tass.com" },
-          { name: "RIA Novosti", url: "https://ria.ru" },
-          { name: "Interfax", url: "https://www.interfax.ru" },
-          { name: "Novaya Gazeta", url: "https://novayagazeta.ru" },
-          { name: "Lenta.ru", url: "https://lenta.ru" },
-          { name: "Gazeta.ru", url: "https://www.gazeta.ru" },
-          { name: "Regnum", url: "https://regnum.ru" },
-          { name: "Vesti", url: "https://www.vesti.ru" },
-          { name: "TV Rain (Dozhd)", url: "https://tvrain.tv" },
-          { name: "Kazan First (Kazan)", url: "https://kazanfirst.ru" },
-          { name: "Sib.fm (Novosibirsk)", url: "https://sib.fm" },
-          { name: "Baikal Daily (Ulan-Udé)", url: "https://www.baikal-daily.ru" },
-          { name: "Yakutia.Info (Siberia Oriental)", url: "https://yakutia.info" },
-          { name: "Omsk Zdes", url: "https://omskzdes.ru" },
-          { name: "Yuga.ru (Región Sur)", url: "https://www.yuga.ru" },
-          { name: "Newsvl.ru (Vladivostok)", url: "https://www.newsvl.ru" },
-          { name: "SeverPost (Murmansk)", url: "https://severpost.ru" },
-          { name: "Bloknot Voronezh", url: "https://bloknot-voronezh.ru" },
-          { name: "Perm News", url: "https://properm.ru" },
-          { name: "Nizhny Novgorod Online", url: "https://nn.ru" },
-          { name: "Komsomolskaya Pravda", url: "https://www.kp.ru" },
-          { name: "Penza News", url: "https://penzanews.ru" },
-          { name: "V1.RU (Volgogrado)", url: "https://v1.ru" }
+          { name: "The Moscow Times", url: "https://www.themoscowtimes.com" }
         ],
-        
         san_marino: [
           { name: "San Marino RTV", url: "https://www.sanmarinortv.sm" },
           { name: "La Serenissima", url: "https://www.laserenissima.sm" },
@@ -1292,7 +1263,7 @@ const data = {
       wallis_and_futuna: [
         { name: "Wallis et Futuna 1ère", url: "https://la1ere.francetvinfo.fr/wallisfutuna/" }
       ]
-    }    
+    } 
     };
 // ===============================
 // 1. Iconos por continente
@@ -1522,6 +1493,7 @@ const flags = {
   new_caledonia: "🇳🇨",
   french_polynesia: "🇵🇫",
   guam: "🇬🇺",
+  northern_mariana_islands: "🇲🇵",
   cook_islands: "🇨🇰",
   american_samoa: "🇦🇸",
   wallis_and_futuna: "🇼🇫"
@@ -1885,14 +1857,4 @@ function removeActive(items) {
   items.forEach((item) => item.classList.remove("active"));
 }
 
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  if (navigator.language && navigator.language.toLowerCase().startsWith("ru")) {
-    const banner = document.getElementById("banner-ruso");
-    if (banner) {
-      banner.classList.remove("oculto");
-      console.log("🌐 Idioma ruso detectado: banner visible.");
-    }
-  }
 });
