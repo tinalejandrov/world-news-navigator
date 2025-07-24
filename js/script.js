@@ -1493,7 +1493,6 @@ const flags = {
   new_caledonia: "🇳🇨",
   french_polynesia: "🇵🇫",
   guam: "🇬🇺",
-  northern_mariana_islands: "🇲🇵",
   cook_islands: "🇨🇰",
   american_samoa: "🇦🇸",
   wallis_and_futuna: "🇼🇫"
