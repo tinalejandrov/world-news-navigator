@@ -627,3 +627,34 @@ footer a:hover {
   /* TL  TR  BR  BL */
   border-radius: 12px 0 0 0 !important;
 }
+.intro-descripcion {
+  font-size: 1.1em;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+  color: #333;
+}
+
+.country-description {
+  font-size: 1.125rem;      /* un punto más grande que normal */
+  font-weight: bold;        /* negrita */
+  color: #333;              /* tono oscuro pero amigable */
+  text-align: center;
+  margin: 24px auto 12px auto;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+#country-description {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  max-height: 0;
+  overflow: hidden;
+}
+
+#country-description.visible {
+  opacity: 1;
+  max-height: 200px; /* o un valor suficiente para el texto */
+}

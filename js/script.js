@@ -1593,6 +1593,73 @@ continentSelect.addEventListener("change", function () {
   }
 });
 
+const countryDescriptions = {
+  // 🌎 América
+  argentina: "📰 Discover Argentina's top news outlets. Read about national updates, social issues, sports and global affairs.",
+  brazil: "📰 These are the main online newspapers from Brazil. Stay updated with trusted sources covering politics, economy, sports, and more.",
+  mexico: "📰 Follow the latest news from Mexico. Explore national issues, cultural topics and breaking headlines.",
+  colombia: "📰 Colombian news at your fingertips. Discover coverage on politics, society, economy and more.",
+  chile: "📰 Stay informed with top newspapers from Chile. Updates on government, finance, education and world news.",
+  peru: "📰 Leading Peruvian news sources. National reports, sports, culture and Latin American affairs.",
+  canada: "📰 Canada’s main digital newspapers. Get insights on politics, economy, environment and international news.",
+  united_states: "📰 Leading newspapers from the United States. Follow breaking news, business, politics and innovation.",
+
+  // 🌍 Europa
+  england: "📰 Newspapers from the United Kingdom. Stay informed on global and national developments.",
+  france: "📰 Read top newspapers from France. Covering politics, economy, culture and international affairs.",
+  germany: "📰 Access the most influential newspapers in Germany. Get updates on technology, finance and EU matters.",
+  italy: "📰 Discover Italy’s main news outlets. From politics to fashion, sports and global events.",
+  spain: "📰 Follow the latest from Spain's top newspapers. Cultural, political and economic news in real time.",
+  russia: "📰 Key news sources from Russia. National and global developments, analysis and reports.",
+  ukraine: "📰 Ukraine’s major news outlets. Coverage on national defense, society, and international relations.",
+  netherlands: "📰 Trusted news from the Netherlands. Explore stories on sustainability, economy and European affairs.",
+
+  // 🌏 Asia
+  india: "📰 Explore news from India’s top newspapers. Get coverage on technology, culture, cricket and world news.",
+  china: "📰 Stay informed with top Chinese media. Updates on innovation, economy and international diplomacy.",
+  japan: "📰 Leading news from Japan. Read about technology, society, economy and global influence.",
+  south_korea: "📰 South Korea’s main digital outlets. Follow stories on tech, K-culture and international relations.",
+  indonesia: "📰 Discover Indonesia's most popular newspapers. National updates, regional news and more.",
+  philippines: "📰 Philippine newspapers offering insights into politics, society and Southeast Asian affairs.",
+  pakistan: "📰 News from Pakistan’s leading outlets. Reports on local issues, regional dynamics and world news.",
+
+  // 🌍 África
+  nigeria: "📰 Nigeria's top newspapers. Politics, economy, local updates and pan-African news.",
+  south_africa: "📰 Follow South African news. Coverage on business, justice, society and sports.",
+  egypt: "📰 Major Egyptian news sources. Explore political updates, Arab world developments and cultural stories.",
+  kenya: "📰 Read the most relevant Kenyan news. Economy, innovation and East African affairs.",
+  morocco: "📰 Morocco’s top digital newspapers. Updates on governance, tourism and regional dynamics.",
+  ghana: "📰 Stay informed with Ghanaian news outlets. Insights on national development and West African topics.",
+
+  // 🌏 Oceanía
+  australia: "📰 Australia's leading news platforms. Stories on politics, environment, science and global topics.",
+  new_zealand: "📰 New Zealand’s main newspapers. National updates, Maori culture, sports and world news.",
+  fiji: "📰 Fijian news coverage. Reports on local life, regional cooperation and tourism.",
+  papua_new_guinea: "📰 PNG news from verified outlets. Community updates, governance and island affairs.",
+
+  // 🌍 Oriente Medio
+  turkey: "📰 Turkish news sources. Follow local politics, economy and international matters.",
+  iran: "📰 News from Iran’s top outlets. Insights on Middle Eastern geopolitics, society and the world.",
+  israel: "📰 Israel’s major newspapers. Security, innovation, society and global diplomacy.",
+  saudi_arabia: "📰 Saudi Arabia’s leading news providers. Regional influence, economy and Middle East affairs.",
+  uae: "📰 UAE news from Dubai and Abu Dhabi. Tech, economy and global partnerships."
+};
+
+
+function mostrarDescripcion(paisSeleccionado) {
+  const descripcion = countryDescriptions[paisSeleccionado];
+  const divDescripcion = document.getElementById("country-description");
+
+  if (descripcion) {
+    divDescripcion.textContent = descripcion;
+    divDescripcion.classList.add("visible");
+  } else {
+    divDescripcion.textContent = "";
+    divDescripcion.classList.remove("visible");
+  }
+}
+
+
 // ===============================
 // 6. Función para formatear nombres
 // ===============================
@@ -1636,6 +1703,7 @@ countrySelect.addEventListener("change", function () {
       newspaperList.appendChild(li);
     });
   }
+  mostrarDescripcion(selectedCountry);
 });
 
 function hideCookieBanner() {
@@ -1809,6 +1877,7 @@ if (resultados.length > 0) {
         soloInput.classList.remove("has-suggestions");  
         input.value = result.countryName;
         buscarPorPais(newspaperList);
+        mostrarDescripcion(result.country);
       });
       sugerenciasBox.appendChild(div);
     });
@@ -1840,6 +1909,7 @@ if (resultados.length > 0) {
     const soloInput = document.querySelector(".solo-input");
     soloInput.classList.remove("has-suggestions");
     input.focus(); // 👈 Le devuelve el foco al input automáticamente
+    document.getElementById("country-description").textContent = `🗞️ ${descripcion}`;
   });
   let currentFocus = -1;
 
