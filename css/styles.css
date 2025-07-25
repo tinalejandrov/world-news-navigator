@@ -627,6 +627,7 @@ footer a:hover {
   /* TL  TR  BR  BL */
   border-radius: 12px 0 0 0 !important;
 }
+
 .intro-descripcion {
   font-size: 1.1em;
   line-height: 1.6;
@@ -637,24 +638,21 @@ footer a:hover {
   color: #333;
 }
 
-.country-description {
-  font-size: 1.125rem;      /* un punto más grande que normal */
-  font-weight: bold;        /* negrita */
-  color: #333;              /* tono oscuro pero amigable */
+#country-description {
+  font-size: 1.125rem;       /* un punto más grande que normal */
+  font-weight: bold;         /* negrita */
+  color: #333;               /* tono oscuro pero amigable */
   text-align: center;
   margin: 24px auto 12px auto;
   max-width: 800px;
   line-height: 1.6;
-}
-
-#country-description {
   opacity: 0;
-  transition: opacity 0.5s ease-in;
+  transition: opacity 0.5s ease-in, max-height 0.5s ease-in;
   max-height: 0;
   overflow: hidden;
 }
 
-#country-description.visible {
+#country-description.fade-in {
   opacity: 1;
   max-height: 200px; /* o un valor suficiente para el texto */
 }
