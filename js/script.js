@@ -1649,16 +1649,14 @@ const countryDescriptions = {
 function mostrarDescripcion(paisSeleccionado) {
   const descripcion = countryDescriptions[paisSeleccionado];
   const divDescripcion = document.getElementById("country-description");
-
   if (descripcion) {
     divDescripcion.textContent = descripcion;
-    divDescripcion.classList.add("visible");
+    divDescripcion.style.display = "block";
   } else {
     divDescripcion.textContent = "";
-    divDescripcion.classList.remove("visible");
+    divDescripcion.style.display = "none";
   }
 }
-
 
 // ===============================
 // 6. Función para formatear nombres

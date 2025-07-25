@@ -2,162 +2,162 @@
 /* ==== Reset básico ==== */
 /* ===============================*/
 body, html, ul li {
-    margin: 0;
-    padding: 0;
-  }
-  
-  ul, #diarios li {
-    list-style: none;
-  }
-  
-  /* ===============================*/
-  /* ==== Tipografía y estructura base ==== */
-  /* ===============================*/
-  body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background-color: #f2f4f8;
-    color: #333;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  footer, select option[value=""] {
-    text-align: center;
-  }
-  
-  /* ===============================*/
-  /* ==== Contenido principal ==== */
-  /* ===============================*/
-  .contenido {
-    flex: 1;
-    padding: 40px 20px 10px; /* Reducido el padding-bottom */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: flex-start;
-  }
-  
-  select {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    padding: 12px 18px;
-    font-size: 16px;
-    font-weight: 500;
-    color: #333;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    cursor: pointer;
-    width: 250px;
-    max-width: 90%;
-    display: block;
-    margin: 12px auto;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' width='12' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='30,50 70,90 110,50' fill='none' stroke='%23999' stroke-width='15' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 14px center;
-    background-size: 12px;
-  }  
-  
-  select:focus {
-    border-color: #0077cc;
-    box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.15);
-    outline: none;
-  }  
-  
-  /* ===============================*/
-  /* ==== Texto descriptivo ==== */
-  /* ===============================*/
-  .descripcion {
-    font-size: 18px;
-    color: #666;
-    margin: 8px 0 24px;
-  }
-  
-  /* ===============================*/
-  /* ==== Contenedor de menú ==== */
-  /* ===============================*/
-  .menu-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    margin-top: 40px;
-    margin-bottom: 20px;
-  }
-  
-  .menu-container label {
-    font-size: 16px;
-    font-weight: 600;
-    color: #444;
-    margin-bottom: 4px;
-  }
+  margin: 0;
+  padding: 0;
+}
 
- /* =============================== */
+ul, #diarios li {
+  list-style: none;
+}
+
+/* ===============================*/
+/* ==== Tipografía y estructura base ==== */
+/* ===============================*/
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f2f4f8;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+footer, select option[value=""] {
+  text-align: center;
+}
+
+/* ===============================*/
+/* ==== Contenido principal ==== */
+/* ===============================*/
+.contenido {
+  flex: 1;
+  padding: 40px 20px 10px; /* Reducido el padding-bottom */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: flex-start;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  width: 250px;
+  max-width: 90%;
+  display: block;
+  margin: 12px auto;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' width='12' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='30,50 70,90 110,50' fill='none' stroke='%23999' stroke-width='15' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 12px;
+}  
+
+select:focus {
+  border-color: #0077cc;
+  box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.15);
+  outline: none;
+}  
+
+/* ===============================*/
+/* ==== Texto descriptivo ==== */
+/* ===============================*/
+.descripcion {
+  font-size: 18px;
+  color: #666;
+  margin: 8px 0 24px;
+}
+
+/* ===============================*/
+/* ==== Contenedor de menú ==== */
+/* ===============================*/
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.menu-container label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+/* =============================== */
 /* ==== Buscador directo por país ==== */
 /* =============================== */
 
 #buscador-wrapper {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  overflow: visible;
-  flex-direction: column;
-  margin: 10px auto 16px; /* Elegí el margen que prefieras */
-  z-index: 50;
+display: flex;
+justify-content: center;
+position: relative;
+overflow: visible;
+flex-direction: column;
+margin: 10px auto 16px; /* Elegí el margen que prefieras */
+z-index: 50;
 }
 
 .buscador-inner {
-  display: flex;
-  border-radius: 12px;
-  overflow: visible;
-  background-color: white;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-  position: relative;
-  z-index: 51;
+display: flex;
+border-radius: 12px;
+overflow: visible;
+background-color: white;
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+position: relative;
+z-index: 51;
 }
 
 
 #buscador-pais {
-  padding: 10px 14px;
-  font-size: 16px;
-  outline: none !important;
-  width: 250px;
-  max-width: 90%;
-  border: none !important;
-  border-right: none; /* 👈 Oculta solo el borde derecho */
-  border-radius: 12px 0 0 12px;
-  background: inherit !important;
-  box-shadow: none !important; /* ❌ Evita línea azul adicional */
-  box-sizing: border-box;
-  flex: 1;
+padding: 10px 14px;
+font-size: 16px;
+outline: none !important;
+width: 250px;
+max-width: 90%;
+border: none !important;
+border-right: none; /* 👈 Oculta solo el borde derecho */
+border-radius: 12px 0 0 12px;
+background: inherit !important;
+box-shadow: none !important; /* ❌ Evita línea azul adicional */
+box-sizing: border-box;
+flex: 1;
 }
 
 #buscador-pais:focus {
-  /* Mantén el border original y no lo cambies de grosor */
-  border: 1px solid #ccc;    
-  border-right: none;
+/* Mantén el border original y no lo cambies de grosor */
+border: 1px solid #ccc;    
+border-right: none;
 
-  /* Este outline es el “borde azul” sin alterar el tamaño */
-  outline: 2px solid rgba(30,144,255,0.8);
-  outline-offset: -2px;
+/* Este outline es el “borde azul” sin alterar el tamaño */
+outline: 2px solid rgba(30,144,255,0.8);
+outline-offset: -2px;
 
-  /* Elimina cualquier otro border o box-shadow aquí */
-  box-shadow: none;
+/* Elimina cualquier otro border o box-shadow aquí */
+box-shadow: none;
 }
 
 
@@ -166,64 +166,64 @@ body, html, ul li {
 /* ============================= */
 #boton-limpiar,
 #boton-buscar {
-  /* Alto igual al input */
-  height: 100%;
-  /* Ancho flexible con padding horizontal */
-  padding: 0 16px;
-  
-  /* Tipografía idéntica */
-  font-size: 22px;
-  font-weight: 600;
-  color: #000;
-  
-  /* Fondo y sombra */
-  background-color: #f4faff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-  
-  /* Borde base */
-  border: 1px solid #ccc;
-  cursor: pointer;
-  
-  /* Flex para centrar icono/letra */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  /* Transición idéntica */
-  transition: background-color 0.3s ease,
-              transform       0.3s ease,
-              box-shadow      0.3s ease;
+/* Alto igual al input */
+height: 100%;
+/* Ancho flexible con padding horizontal */
+padding: 0 16px;
+
+/* Tipografía idéntica */
+font-size: 22px;
+font-weight: 600;
+color: #000;
+
+/* Fondo y sombra */
+background-color: #f4faff;
+box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+
+/* Borde base */
+border: 1px solid #ccc;
+cursor: pointer;
+
+/* Flex para centrar icono/letra */
+display: flex;
+align-items: center;
+justify-content: center;
+
+/* Transición idéntica */
+transition: background-color 0.3s ease,
+            transform       0.3s ease,
+            box-shadow      0.3s ease;
 }
 
 /* Hover igual */
 #boton-limpiar:hover,
 #boton-buscar:hover {
-  background-color: #e0f0ff;
-  transform: translateY(-3px) scale(1.05);
+background-color: #e0f0ff;
+transform: translateY(-3px) scale(1.05);
 }
 
 /* ============================= */
 /* 2) Botón LIMPIAR (intermedio)*/
 /* ============================= */
 #boton-limpiar {
-  /* Oculto hasta que JS quite .oculto */
-  /* (asegurate de tenerlo en tu HTML: <button id="boton-limpiar" class="oculto">…) */
-  border: none !important;
+/* Oculto hasta que JS quite .oculto */
+/* (asegurate de tenerlo en tu HTML: <button id="boton-limpiar" class="oculto">…) */
+border: none !important;
 }
 
 /* ============================= */
 /* 3) Botón BUSCAR (extremo)     */
 /* ============================= */
 #boton-buscar {
-  border-left: none;           /* no doble borde con limpiar */
-  border-radius: 0 12px 12px 0; /* solo redondeado derecha */
+border-left: none;           /* no doble borde con limpiar */
+border-radius: 0 12px 12px 0; /* solo redondeado derecha */
 }
 
 /* ============================= */
 /* 4) Ocultar limpiador         */
 /* ============================= */
 .oculto {
-  display: none !important;
+display: none !important;
 }
 
 
@@ -232,368 +232,368 @@ body, html, ul li {
 /* =============================== */
 
 .menu-container {
-  margin: 10px auto;
-  gap: 12px;
+margin: 10px auto;
+gap: 12px;
 }
 
 select {
-  margin: 8px 0;
+margin: 8px 0;
 }
 
-  /* ===============================*/
-  /* ==== Agrupador de cada label + select ==== */
-  /* ===============================*/
+/* ===============================*/
+/* ==== Agrupador de cada label + select ==== */
+/* ===============================*/
 .form-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 6px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+}
 
-  /* ===============================*/
-  /* ==== Lista de diarios ==== */
-  /* ===============================*/
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-  }
-  
-  ul li {
-    background: none;
-  }
-  
-  ul li a {
-    display: inline-block;
-    padding: 10px 16px;
-    border-radius: 12px;
-    font-weight: 700;
-    text-decoration: none;
-    background-color: #fdfdfd;
-    color: #1e90ff;
-    box-shadow: none;
-    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
-  }
-  
-  ul li a:hover:not(.diario-seleccionado) {
-    background-color: #e8f4ff;
-    transform: scale(1.05);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-  }
-  
-  ul li a:active {
-    transform: scale(0.95);
-    background-color: #d0d0d0;
-  }
+/* ===============================*/
+/* ==== Lista de diarios ==== */
+/* ===============================*/
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
 
-  #diarios {
-    padding-bottom: 1em;
-  }
+ul li {
+  background: none;
+}
 
-  #diarios:empty {
-    display: none;
-  }  
-  
-  #diarios li {
-    margin: 10px 0;
-    transition: transform 0.2s, box-shadow 0.2s;
-    border-radius: 10px;
-  }
-  
-  #diarios li a {
-    display: block;
-    padding: 12px 20px;
-    font-size: 16px;
-    color: #1a1a1a;
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.3s ease;
-  }
-  
-  #diarios li a:hover:not(.diario-seleccionado) {
-    background-color: #e0f0ff;
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-  }
-  
-  /* ===============================*/
-  /* ==== Diario seleccionado ==== */
-  /* ===============================*/
-  .diario-seleccionado {
-    background-color: #d0e9ff;
-    border: 2px solid #1e90ff;
-    font-weight: 700;
-    padding: 8px 16px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-    border-radius: 12px;
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-  }
-  
-  /* apuntamos directamente al <a> para cambiar el color del texto */
-  .diario-seleccionado a {
-    color: #111111 !important;
-    text-decoration: none;
-  }
-  
-  .diario-seleccionado:hover {
-    background-color: #c0e0fa;
-  }
-  
-  .diario-seleccionado:hover a {
-    color: #000000 !important;
-  }
-  
-  /* ===============================*/
-  /* ==== Botón de modo claro/oscuro ==== */
-  /* ===============================*/
-  /*#modoToggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: 1px solid #1e90ff;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    line-height: 1;
-    background-color: #fdfdfd;
-    color: #1e90ff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
-  }  
-  
-  #modoToggle:hover {
-    background-color: #e0e0e0;
-    transform: scale(1.1);
-  }*/
-  /* ===============================*/
-  /* ==== Responsive tablets / pantallas medianas ==== */
-  /* ===============================*/
+ul li a {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  background-color: #fdfdfd;
+  color: #1e90ff;
+  box-shadow: none;
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+ul li a:hover:not(.diario-seleccionado) {
+  background-color: #e8f4ff;
+  transform: scale(1.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+ul li a:active {
+  transform: scale(0.95);
+  background-color: #d0d0d0;
+}
+
+#diarios {
+  padding-bottom: 1em;
+}
+
+#diarios:empty {
+  display: none;
+}  
+
+#diarios li {
+  margin: 10px 0;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 10px;
+}
+
+#diarios li a {
+  display: block;
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #1a1a1a;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.3s ease;
+}
+
+#diarios li a:hover:not(.diario-seleccionado) {
+  background-color: #e0f0ff;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* ===============================*/
+/* ==== Diario seleccionado ==== */
+/* ===============================*/
+.diario-seleccionado {
+  background-color: #d0e9ff;
+  border: 2px solid #1e90ff;
+  font-weight: 700;
+  padding: 8px 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+/* apuntamos directamente al <a> para cambiar el color del texto */
+.diario-seleccionado a {
+  color: #111111 !important;
+  text-decoration: none;
+}
+
+.diario-seleccionado:hover {
+  background-color: #c0e0fa;
+}
+
+.diario-seleccionado:hover a {
+  color: #000000 !important;
+}
+
+/* ===============================*/
+/* ==== Botón de modo claro/oscuro ==== */
+/* ===============================*/
+/*#modoToggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #1e90ff;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+  background-color: #fdfdfd;
+  color: #1e90ff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}  
+
+#modoToggle:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.1);
+}*/
+/* ===============================*/
+/* ==== Responsive tablets / pantallas medianas ==== */
+/* ===============================*/
 @media (max-width: 768px) {
-    h1 {
-      font-size: 26px;
-    }
-  
-    select,
-    ul li a {
-      font-size: 15px;
-    }
-  
-    .menu-container {
-      gap: 10px;
-    }
-  
-    select {
-      padding: 8px 10px;
-      min-width: 200px;
-      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-    }
-  
-    #modoToggle {
-      top: 10px;
-      right: 10px;
-      width: 40px;
-      height: 40px;
-      font-size: 20px;
-      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
-    }
-  }
-  
-  /* ===============================*/
-  /* ==== Responsive celulares chicos ==== */
-  /* ===============================*/
-  @media (max-width: 480px) {
-    h1 {
-      font-size: 20px;
-      line-height: 1.3;
-    }
-  
-    .descripcion {
-      font-size: 16px;
-    }
-  
-    select {
-      font-size: 14px;
-      padding: 8px 10px;
-      min-width: 180px;
-    }
-  
-    ul li a {
-      font-size: 14px;
-      padding: 8px 12px;
-    }
-  
-    #modoToggle {
-      top: 8px;
-      right: 8px;
-      width: 36px;
-      height: 36px;
-      font-size: 18px;
-    }
-  
-    .idioma-aviso {
-      font-size: 0.8em;
-      padding: 0 10px;
-    }
+  h1 {
+    font-size: 26px;
   }
 
-  footer a {
-    color: #1e90ff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease, text-decoration 0.3s ease;
-    margin: 0 6px;
-  }
-  
-  footer a:hover {
-    text-decoration: underline;
-    color: #63b3ed;
+  select,
+  ul li a {
+    font-size: 15px;
   }
 
-  footer {
-    padding: 20px 10px;
+  .menu-container {
+    gap: 10px;
+  }
+
+  select {
+    padding: 8px 10px;
+    min-width: 200px;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  #modoToggle {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  }
+}
+
+/* ===============================*/
+/* ==== Responsive celulares chicos ==== */
+/* ===============================*/
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
+  .descripcion {
+    font-size: 16px;
+  }
+
+  select {
     font-size: 14px;
-    color: #777;
-    text-align: center;
-    line-height: 1.6;
-  }
-  
-  footer br {
-    display: block;
-    margin-bottom: 6px; /* separa visualmente el texto de los enlaces */
-  }
-  
-  .cookie-banner {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #222;
-    color: #fff;
-    text-align: center;
-    padding: 1em;
-    font-size: 0.9em;
-    z-index: 9999;
-    display: none;
-  }
-  .cookie-banner button {
-    margin-left: 1em;
-    padding: 0.5em 1em;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
+    padding: 8px 10px;
+    min-width: 180px;
   }
 
-  .solo-input {
-    background-color: white;
-    position: relative;
-    display: flex;
-    align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 12px 0 0 12px;
-    overflow: visible !important;
-    transition: border-radius 0.2s ease;
+  ul li a {
+    font-size: 14px;
+    padding: 8px 12px;
   }
 
-  /* 👉 Agregalo justo debajo o cerca de acá: */
-.input-wrapper {
+  #modoToggle {
+    top: 8px;
+    right: 8px;
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .idioma-aviso {
+    font-size: 0.8em;
+    padding: 0 10px;
+  }
+}
+
+footer a {
+  color: #1e90ff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+  margin: 0 6px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #63b3ed;
+}
+
+footer {
+  padding: 20px 10px;
+  font-size: 14px;
+  color: #777;
+  text-align: center;
+  line-height: 1.6;
+}
+
+footer br {
+  display: block;
+  margin-bottom: 6px; /* separa visualmente el texto de los enlaces */
+}
+
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+  font-size: 0.9em;
+  z-index: 9999;
+  display: none;
+}
+.cookie-banner button {
+  margin-left: 1em;
+  padding: 0.5em 1em;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.solo-input {
+  background-color: white;
   position: relative;
-  flex: 1;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 12px 0 0 12px;
+  overflow: visible !important;
+  transition: border-radius 0.2s ease;
+}
+
+/* 👉 Agregalo justo debajo o cerca de acá: */
+.input-wrapper {
+position: relative;
+flex: 1;
 }
 .solo-input.has-suggestions {
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 0; /* aplana la esquina inferior izquierda */
-  overflow: hidden; /* ⚠️ fuerza que el fondo se recorte igual que el borde */
+border-top-left-radius: 12px;
+border-bottom-left-radius: 0; /* aplana la esquina inferior izquierda */
+overflow: hidden; /* ⚠️ fuerza que el fondo se recorte igual que el borde */
 }
-  
-  /* Aplica al input dentro del contenedor cuando hay sugerencias */
-  .solo-input.has-suggestions input {
-    border-bottom-left-radius: 0;
-    background-clip: padding-box; /* este detalle evita fugas del fondo blanco */
-  }  
 
-  .solo-input.has-suggestions:focus-within #sugerencias {
-    left: -1px;  /* más hacia la izquierda */
-    width: 100%; /* compensa la extensión */
-    box-shadow:
-     /* 0 0 0 2px rgba(30,144,255,0.8),*/
-      0 2px 6px rgba(0, 0, 0, 0.06);
-    border-top: none;
-  }  
-  #sugerencias {
-    position: absolute;
-    top: 100%;
-    left: -1px;
-    width: calc(100% + 0px); /* Ajustamos para que sobresalga levemente */
-    background-color: #ffffff;
-    border: 1px solid #ccc; /* borde neutral */
-    border-top: none;
-    border-radius: 0   0  0 12px !important;
-    /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06); */ /* sombra desactivada por estética */
-    z-index: 9999;
-    padding: 4px 0;
-    overflow-y: auto;
-    max-height: 200px;
-    /* animation: fadeInUp 0.3s ease forwards; */ /* opcional: quitar animación */
-  }
-  
-  #sugerencias:empty {
-    display: none;
-  }
-  
-  .sugerencia-item {
-    padding: 10px 12px;
-    cursor: pointer;
-    font-size: 15px;
-    text-align: left;
-    transition: background-color 0.2s ease;
-  }
-  
-  /* Esta línea hace magia para casos extremos */
-  select {
-    position: relative;
-    z-index: 0;
-  }
-  
-  .sugerencia-item:hover {
-    background-color: #e0f0ff;
-  } 
-  
-  #sugerencias div.active {
-    background-color: #e0f0ff;
-    color: #000;
-    border-radius: 6px;
-  }  
-  
+/* Aplica al input dentro del contenedor cuando hay sugerencias */
+.solo-input.has-suggestions input {
+  border-bottom-left-radius: 0;
+  background-clip: padding-box; /* este detalle evita fugas del fondo blanco */
+}  
+
+.solo-input.has-suggestions:focus-within #sugerencias {
+  left: -1px;  /* más hacia la izquierda */
+  width: 100%; /* compensa la extensión */
+  box-shadow:
+   /* 0 0 0 2px rgba(30,144,255,0.8),*/
+    0 2px 6px rgba(0, 0, 0, 0.06);
+  border-top: none;
+}  
+#sugerencias {
+  position: absolute;
+  top: 100%;
+  left: -1px;
+  width: calc(100% + 0px); /* Ajustamos para que sobresalga levemente */
+  background-color: #ffffff;
+  border: 1px solid #ccc; /* borde neutral */
+  border-top: none;
+  border-radius: 0   0  0 12px !important;
+  /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06); */ /* sombra desactivada por estética */
+  z-index: 9999;
+  padding: 4px 0;
+  overflow-y: auto;
+  max-height: 200px;
+  /* animation: fadeInUp 0.3s ease forwards; */ /* opcional: quitar animación */
+}
+
+#sugerencias:empty {
+  display: none;
+}
+
+.sugerencia-item {
+  padding: 10px 12px;
+  cursor: pointer;
+  font-size: 15px;
+  text-align: left;
+  transition: background-color 0.2s ease;
+}
+
+/* Esta línea hace magia para casos extremos */
+select {
+  position: relative;
+  z-index: 0;
+}
+
+.sugerencia-item:hover {
+  background-color: #e0f0ff;
+} 
+
+#sugerencias div.active {
+  background-color: #e0f0ff;
+  color: #000;
+  border-radius: 6px;
+}  
+
 /* =============================== */
 /* ==== Animación de entrada fade-in-up ==== */
 /* =============================== */
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+to {
+  opacity: 1;
+  transform: translateY(0);
+}
 }
 
 /* ==== Animación fade-in-up ==== */
 .fade-in {
-  animation: fadeInUp 0.6s ease forwards;
-  opacity: 0;
+animation: fadeInUp 0.6s ease forwards;
+opacity: 0;
 }
 
 /* ==== Delays escalonadas ==== */
@@ -607,52 +607,42 @@ select {
 .delay-8 { animation-delay: 1.5s; }
 
 footer a {
-  opacity: 0.85;
-  transition: opacity 0.2s ease;
+opacity: 0.85;
+transition: opacity 0.2s ease;
 }
 
 footer a:hover {
-  opacity: 1;
+opacity: 1;
 }
 
 .adsbygoogle-wrapper {
-  margin: 0;
-  padding: 0.5em 0 0.5em; /* muy poco arriba y abajo */
-  display: flex;
-  justify-content: center;
+margin: 0;
+padding: 0.5em 0 0.5em; /* muy poco arriba y abajo */
+display: flex;
+justify-content: center;
 }
 
 /* 1) Cuando el contenedor aplana su bottom-left, el input también */
 .solo-input.has-suggestions > #buscador-pais {
-  /* TL  TR  BR  BL */
-  border-radius: 12px 0 0 0 !important;
+/* TL  TR  BR  BL */
+border-radius: 12px 0 0 0 !important;
 }
-
 .intro-descripcion {
-  font-size: 1.1em;
-  line-height: 1.6;
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1rem;
-  text-align: center;
-  color: #333;
+font-size: 1.1em;
+line-height: 1.6;
+max-width: 800px;
+margin: 2rem auto;
+padding: 1rem;
+text-align: center;
+color: #333;
 }
 
-#country-description {
-  font-size: 1.125rem;       /* un punto más grande que normal */
-  font-weight: bold;         /* negrita */
-  color: #333;               /* tono oscuro pero amigable */
-  text-align: center;
-  margin: 24px auto 12px auto;
-  max-width: 800px;
-  line-height: 1.6;
-  opacity: 0;
-  transition: opacity 0.5s ease-in, max-height 0.5s ease-in;
-  max-height: 0;
-  overflow: hidden;
-}
-
-#country-description.fade-in {
-  opacity: 1;
-  max-height: 200px; /* o un valor suficiente para el texto */
+.country-description {
+font-size: 1.125rem;      /* un punto más grande que normal */
+font-weight: bold;        /* negrita */
+color: #333;              /* tono oscuro pero amigable */
+text-align: center;
+margin: 24px auto 12px auto;
+max-width: 800px;
+line-height: 1.6;
 }
