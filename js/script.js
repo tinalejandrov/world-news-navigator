@@ -1649,12 +1649,13 @@ const countryDescriptions = {
 function mostrarDescripcion(paisSeleccionado) {
   const descripcion = countryDescriptions[paisSeleccionado];
   const divDescripcion = document.getElementById("country-description");
+
   if (descripcion) {
     divDescripcion.textContent = descripcion;
-    divDescripcion.style.display = "block";
+    divDescripcion.classList.add("visible");
   } else {
+    divDescripcion.classList.remove("visible");
     divDescripcion.textContent = "";
-    divDescripcion.style.display = "none";
   }
 }
 
@@ -1904,11 +1905,16 @@ if (resultados.length > 0) {
     newspaperList.innerHTML = "";
     document.getElementById("sugerencias").innerHTML = "";
     botonLimpiar.classList.add("oculto"); // ✅ Ocultar botón después de limpiar
+  
     const soloInput = document.querySelector(".solo-input");
     soloInput.classList.remove("has-suggestions");
     input.focus(); // 👈 Le devuelve el foco al input automáticamente
-    document.getElementById("country-description").textContent = `🗞️ ${descripcion}`;
+  
+    const divDescripcion = document.getElementById("country-description");
+    divDescripcion.classList.remove("visible");
+    divDescripcion.textContent = "";
   });
+  
   let currentFocus = -1;
 
 function addActive(items) {

@@ -638,11 +638,18 @@ color: #333;
 }
 
 .country-description {
-font-size: 1.125rem;      /* un punto más grande que normal */
-font-weight: bold;        /* negrita */
-color: #333;              /* tono oscuro pero amigable */
-text-align: center;
-margin: 24px auto 12px auto;
-max-width: 800px;
-line-height: 1.6;
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin: 24px auto 12px auto;
+  max-width: 800px;
+  line-height: 1.6;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  pointer-events: none; /* evita interacción mientras está oculta */
+}
+
+.country-description.visible {
+  opacity: 1;
 }
