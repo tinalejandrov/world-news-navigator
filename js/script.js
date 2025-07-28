@@ -1645,12 +1645,19 @@ const countryDescriptions = {
   uae: "📰 UAE news from Dubai and Abu Dhabi. Tech, economy and global partnerships."
 };
 
-
 function mostrarDescripcion(paisSeleccionado) {
   const descripcion = countryDescriptions[paisSeleccionado];
   const divDescripcion = document.getElementById("country-description");
 
   if (descripcion) {
+    // 🔄 Borramos primero el texto y la clase
+    divDescripcion.classList.remove("visible");
+    divDescripcion.textContent = "";
+
+    // 🧠 Forzamos reflow
+    void divDescripcion.offsetWidth;
+
+    // 💬 Ahora sí: colocamos el nuevo texto y activamos fade-in
     divDescripcion.textContent = descripcion;
     divDescripcion.classList.add("visible");
   } else {
@@ -1876,7 +1883,7 @@ if (resultados.length > 0) {
         soloInput.classList.remove("has-suggestions");  
         input.value = result.countryName;
         buscarPorPais(newspaperList);
-        mostrarDescripcion(result.country);
+        mostrarDescripcion(normalizarClavePais(result.country));
       });
       sugerenciasBox.appendChild(div);
     });
@@ -1931,3 +1938,11 @@ function removeActive(items) {
 }
 
 });
+
+function normalizarClavePais(nombre) {
+  return nombre
+    .toLowerCase()
+    .trim()
+    .replace(/ /g, "_")
+    .replace(/-/g, "_");
+}
