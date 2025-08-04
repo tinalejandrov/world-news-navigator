@@ -1673,12 +1673,9 @@ function formatName(text) {
   return text.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
 }
 
-// ===============================
-// 7. Cambio de país: mostrar diarios
-// ===============================
 countrySelect.addEventListener("change", function () {
   const selectedContinent = continentSelect.value;
-  const selectedCountry = this.value;
+  const selectedCountry = normalizarClavePais(this.value);
   newspaperList.innerHTML = "";
 
   const newspapers =
@@ -1687,30 +1684,20 @@ countrySelect.addEventListener("change", function () {
         data[selectedContinent].islands[selectedCountry]
       : data[selectedContinent][selectedCountry];
 
-  if (newspapers) {
-    newspapers.forEach(entry => {
-      const li = document.createElement("li");
-      const link = document.createElement("a");
-
-      link.href = entry.url;
-      link.textContent = `📰 ${entry.name}`;
-      link.target = "_blank";
-      link.classList.add("diario-link");
-      link.rel = "noopener"; // Recomendado por Lighthouse
-
-      link.addEventListener("click", () => {
-        document
-          .querySelectorAll("#diarios a")
-          .forEach(el => el.classList.remove("diario-seleccionado"));
-        link.classList.add("diario-seleccionado");
-      });
-
-      li.appendChild(link);
-      newspaperList.appendChild(li);
-    });
-  }
+  // 👇 Mostrar descripción inmediatamente
   mostrarDescripcion(selectedCountry);
 });
+
+// ===============================
+// Función para normalizar claves
+// ===============================
+function normalizarClavePais(nombre) {
+  return nombre
+    .toLowerCase()
+    .trim()
+    .replace(/ /g, "_")
+    .replace(/-/g, "_");
+}
 
 function hideCookieBanner() {
   document.getElementById("cookie-banner").style.display = "none";
@@ -1759,28 +1746,39 @@ function mostrarDiarios(continent, country, newspaperList) {
       ? data[continent].mainland[country] || data[continent].islands[country]
       : data[continent][country];
 
-  if (newspapers) {
-    newspapers.forEach(entry => {
-      const li = document.createElement("li");
-      const link = document.createElement("a");
-
-      link.href = entry.url;
-      link.textContent = `📰 ${entry.name}`;
-      link.target = "_blank";
-      link.classList.add("diario-link");
-      link.rel = "noopener";
-
-      link.addEventListener("click", () => {
-        document
-          .querySelectorAll("#diarios a")
-          .forEach(el => el.classList.remove("diario-seleccionado"));
-        link.classList.add("diario-seleccionado");
-      });
-
-      li.appendChild(link);
-      newspaperList.appendChild(li);
-    });
-  }
+      if (newspapers) {
+        // 👇 Pequeño delay tras la descripción antes de cargar diarios
+        setTimeout(() => {
+          newspapers.forEach((entry, index) => {
+            const li = document.createElement("li");
+            const link = document.createElement("a");
+      
+            link.href = entry.url;
+            link.textContent = `📰 ${entry.name}`;
+            link.target = "_blank";
+            link.classList.add("diario-link");
+            link.rel = "noopener";
+      
+            // Evento de selección
+            link.addEventListener("click", () => {
+              document
+                .querySelectorAll("#diarios a")
+                .forEach(el => el.classList.remove("diario-seleccionado"));
+              link.classList.add("diario-seleccionado");
+            });
+      
+            // Insertar al DOM invisible
+            li.appendChild(link);
+            newspaperList.appendChild(li);
+      
+            // 👇 Animación fade-in progresiva
+            setTimeout(() => {
+              link.classList.add("visible");
+            }, 20 + 60 * index); // arranca rápido + escalonado
+          });
+        }, 200); // delay tras la descripción
+      }
+      
 }
 
 function capitalizarNombre(texto) {
