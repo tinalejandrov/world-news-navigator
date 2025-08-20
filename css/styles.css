@@ -725,6 +725,26 @@ color: #333;
   transition: transform .05s ease, box-shadow .2s ease;
 }
 
+#btn-random-newspaper {
+  font-size: 1.15rem;       /* texto un poco más grande */
+  font-weight: 700;         /* más fuerte que los demás */
+  padding: 14px 24px;       /* más alto y ancho */
+  border-radius: 12px;      /* bordes más suaves */
+  background: linear-gradient(135deg, #ffffff, #f4f4f4); /* sutil degradado */
+  border: 2px solid #ddd;   /* un poco más definido */
+  box-shadow: 0 3px 6px rgba(0,0,0,0.08); /* sombra ligera */
+  transition: all 0.25s ease;
+}
+
+/* Efecto hover */
+#btn-random-newspaper:hover {
+  background: linear-gradient(135deg, #f9f9f9, #ededed);
+  transform: translateY(-2px) scale(1.02); /* levanta un poco */
+  box-shadow: 0 6px 10px rgba(0,0,0,0.12);
+}
+
+
 #btn-random-country {
   display: none;
 }
+
