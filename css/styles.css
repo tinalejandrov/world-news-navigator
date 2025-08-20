@@ -121,6 +121,11 @@ margin: 10px auto 16px; /* Elegí el margen que prefieras */
 z-index: 50;
 }
 
+#buscador-wrapper { margin-bottom: 6px; }           /* buscador pegado al título */
+.random-actions-title { margin: 4px 0 8px 0; }       /* título corto y cercano */
+.random-actions { margin: 6px 0 12px 0; }            /* botones cerca del título */
+#selectors { margin-top: 12px; }        
+
 .buscador-inner {
 display: flex;
 border-radius: 12px;
@@ -660,4 +665,66 @@ color: #333;
 
 .diario-link.visible {
   opacity: 1; /* aparece */
+}
+
+.random-actions {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none; /* mientras no se ven, que no sean clickeables */
+}
+
+.random-actions.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.random-title {
+  font-size: 1.1rem;       /* ~18px */
+  line-height: 1.35;
+  font-weight: 600;       /* fuerte pero no exagerado */
+  color: #444;            /* tono oscuro amigable */
+  text-align: center;
+  letter-spacing: 0.3px;
+  margin: 0;                 /* el bloque padre maneja el espaciado */
+}
+
+.random-actions-title {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none; /* que no sea clickeable hasta aparecer */
+}
+
+.random-actions-title.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.random-title em {
+  font-style: italic;
+}
+
+.random-actions-title {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 18px 0 10px 0;
+  color: #333;
+}
+
+.surprise-btn {
+  padding: 10px 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform .05s ease, box-shadow .2s ease;
+}
+
+#btn-random-country {
+  display: none;
 }

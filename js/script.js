@@ -1944,3 +1944,180 @@ function normalizarClavePais(nombre) {
     .replace(/ /g, "_")
     .replace(/-/g, "_");
 }
+
+// Referencias existentes de tu app
+const btnRandomCountry = document.getElementById("btn-random-country");
+const btnRandomNewspaper = document.getElementById("btn-random-newspaper");
+// Ya las tenés:
+/// const continentSelect = document.getElementById("continent-select");
+/// const countrySelect   = document.getElementById("country-select");
+/// const newspaperList   = document.getElementById("diarios");
+
+// ===============
+// Helpers random
+// ===============
+function randIdx(max) { return Math.floor(Math.random() * max); }
+
+// Aplana el objeto `data` a una lista: [{ continent, countryKey, newspapers }]
+function flattenCountries(dataObj) {
+  const out = [];
+  for (const continent of Object.keys(dataObj)) {
+    if (continent === "central_america") {
+      const ca = dataObj[continent];
+      for (const sub of ["mainland", "islands"]) {
+        if (!ca[sub]) continue;
+        for (const countryKey of Object.keys(ca[sub])) {
+          const papers = ca[sub][countryKey] || [];
+          if (Array.isArray(papers) && papers.length > 0) {
+            out.push({ continent, countryKey, newspapers: papers });
+          }
+        }
+      }
+    } else {
+      const block = dataObj[continent];
+      for (const countryKey of Object.keys(block)) {
+        const papers = block[countryKey] || [];
+        if (Array.isArray(papers) && papers.length > 0) {
+          out.push({ continent, countryKey, newspapers: papers });
+        }
+      }
+    }
+  }
+  return out;
+}
+
+// Mantener un pequeño historial para evitar repetidos consecutivos
+const randomHistory = { country: null, newspaper: null };
+
+function pickRandomCountryRow(rows) {
+  if (rows.length === 0) return null;
+  let row = rows[randIdx(rows.length)];
+  // Evitar repetir inmediato
+  if (randomHistory.country && rows.length > 1 && row.countryKey === randomHistory.country.countryKey) {
+    row = rows[(rows.indexOf(row) + 1) % rows.length];
+  }
+  randomHistory.country = row;
+  return row;
+}
+
+function pickRandomNewspaper(rows) {
+  if (rows.length === 0) return null;
+  // Primero el país aleatorio
+  let row = pickRandomCountryRow(rows);
+  if (!row) return null;
+  let paper = row.newspapers[randIdx(row.newspapers.length)];
+  // Evitar repetir inmediato el mismo diario + país
+  if (randomHistory.newspaper && row.countryKey === randomHistory.newspaper.countryKey &&
+      row.newspapers.length > 1 && paper.name === randomHistory.newspaper.name) {
+    const alt = (row.newspapers.indexOf(paper) + 1) % row.newspapers.length;
+    paper = row.newspapers[alt];
+  }
+  randomHistory.newspaper = { countryKey: row.countryKey, name: paper.name };
+  return { row, paper };
+}
+
+// Selecciona en UI y dispara tu render existente
+function selectCountryInUI(continentKey, countryKey) {
+  // 1) Setear continente
+  continentSelect.value = continentKey;
+  continentSelect.dispatchEvent(new Event("change", { bubbles: true })); // para que se repueble countrySelect
+
+  // 2) Setear país (espera un tick por si el repintado es async)
+  setTimeout(() => {
+    // Buscar opción exacta por value
+    const opt = Array.from(countrySelect.options).find(o => o.value === countryKey);
+    if (opt) {
+      countrySelect.value = countryKey;
+      countrySelect.dispatchEvent(new Event("change", { bubbles: true }));
+      // Scroll suave a la lista
+      document.getElementById("diarios")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, 0);
+}
+
+// Destacar un link puntual en la lista de diarios
+function highlightNewspaperLinkByName(name) {
+  const links = document.querySelectorAll("#diarios a.diario-link");
+  const target = Array.from(links).find(a => a.textContent.replace("📰", "").trim() === name.trim());
+  if (target) {
+    links.forEach(el => el.classList.remove("diario-seleccionado"));
+    target.classList.add("diario-seleccionado");
+    target.focus({ preventScroll: false });
+  }
+}
+
+// Helper chiquito (opcional)
+function trackEvent(name, params = {}) {
+  if (typeof gtag === "function") gtag("event", name, params);
+}
+
+// ====================
+// Click: País aleatorio
+// ====================
+btnRandomCountry.addEventListener("click", () => {
+  const rows = flattenCountries(data);
+  const pick = pickRandomCountryRow(rows);
+  if (!pick) return;
+
+  // Selecciona y renderiza usando tus eventos 'change'
+  selectCountryInUI(pick.continent, pick.countryKey);
+
+  // GA4: evento informativo del país elegido
+  trackEvent("random_country", {
+    event_category: "engagement",
+    event_label: `${pick.continent}/${pick.countryKey}`
+  });
+
+  // GA4: evento de clic en el botón
+  trackEvent("random_country_click", {
+    event_category: "engagement",
+    event_label: "Random Country Button",
+    value: 1
+  });
+});
+
+// =======================
+// Click: Diario aleatorio
+// =======================
+btnRandomNewspaper.addEventListener("click", () => {
+  const rows = flattenCountries(data);
+  const result = pickRandomNewspaper(rows);
+  if (!result) return;
+
+  const { row, paper } = result;
+
+  // Render país y resaltar diario
+  selectCountryInUI(row.continent, row.countryKey);
+
+  setTimeout(() => {
+    highlightNewspaperLinkByName(paper.name);
+    window.open(paper.url, "_blank", "noopener,noreferrer");
+  }, 50);
+
+  // GA4: evento informativo del diario elegido
+  trackEvent("random_newspaper", {
+    event_category: "engagement",
+    event_label: `${row.continent}/${row.countryKey} - ${paper.name}`
+  });
+
+  // GA4: evento de clic en el botón
+  trackEvent("random_newspaper_click", {
+    event_category: "engagement",
+    event_label: "Random Newspaper Button",
+    value: 1
+  });
+});
+
+// Mostrar botones con delay (cascada simple)
+document.addEventListener("DOMContentLoaded", () => {
+  const randomBox = document.querySelector(".random-actions");
+  const randomTitle = document.querySelector(".random-actions-title"); // título
+
+  setTimeout(() => {
+    randomTitle.classList.add("visible");   // primero el título
+  }, 970); // aparece después del buscador, ajustá el tiempo
+  setTimeout(() => {
+    randomBox.classList.add("visible");
+  }, 1100); // ajustá este delay
+});
+
