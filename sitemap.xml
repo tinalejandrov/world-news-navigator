@@ -4,15 +4,18 @@
     <loc>https://worldnewsnavigator.news/</loc>
   </url>
   <url>
-    <loc>https://worldnewsnavigator.news/politica.html</loc>
+    <loc>https://worldnewsnavigator.news/about.html</loc>
   </url>
   <url>
-    <loc>https://worldnewsnavigator.news/terminos.html</loc>
+    <loc>https://worldnewsnavigator.news/privacy.html</loc>
   </url>
   <url>
-    <loc>https://worldnewsnavigator.news/aviso-legal.html</loc>
+    <loc>https://worldnewsnavigator.news/terms.html</loc>
   </url>
   <url>
-    <loc>https://worldnewsnavigator.news/contacto.html</loc>
+    <loc>https://worldnewsnavigator.news/legal-notice.html</loc>
   </url>
-</urlset>
+  <url>
+    <loc>https://worldnewsnavigator.news/contact.html</loc>
+  </url>
+  </urlset>
