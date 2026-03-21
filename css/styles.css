@@ -1,46 +1,66 @@
-/* ===============================*/
-/* ==== Reset básico ==== */
-/* ===============================*/
-body, html, ul li {
+/* ===============================
+   Reset básico
+   =============================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body, html, ul, li {
   margin: 0;
   padding: 0;
 }
 
-ul, #diarios li {
+ul {
   list-style: none;
 }
 
-/* ===============================*/
-/* ==== Tipografía y estructura base ==== */
-/* ===============================*/
-body {
+/* ===============================
+   Variables globales
+   =============================== */
+:root {
+  --color-bg:          #f2f4f8;
+  --color-text:        #333;
+  --color-text-muted:  #666;
+  --color-text-label:  #444;
+  --color-accent:      #1e90ff;
+  --color-accent-dark: #0077cc;
+  --color-white:       #fff;
+  --color-border:      #ccc;
+  --color-hover-bg:    #e0f0ff;
+  --color-selected-bg: #d0e9ff;
+
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  12px;
+
+  --shadow-sm:  0 2px 6px rgba(0, 0, 0, 0.06);
+  --shadow-md:  0 3px 6px rgba(0, 0, 0, 0.08);
+  --shadow-lg:  0 6px 10px rgba(0, 0, 0, 0.12);
+
+  --transition-base:  0.2s ease;
+  --transition-color: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ===============================
+   Tipografía y estructura base
+   =============================== */
+html, body {
+  height: 100%;
   font-family: "Segoe UI", Arial, sans-serif;
-  background-color: #f2f4f8;
-  color: #333;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: var(--transition-color);
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-footer, select option[value=""] {
-  text-align: center;
-}
-
-/* ===============================*/
-/* ==== Contenido principal ==== */
-/* ===============================*/
+/* ===============================
+   Contenido principal
+   =============================== */
 .contenido {
   flex: 1;
-  padding: 40px 20px 10px; /* Reducido el padding-bottom */
+  padding: 40px 20px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,206 +68,82 @@ footer, select option[value=""] {
   justify-content: flex-start;
 }
 
+/* ===============================
+   Texto descriptivo
+   =============================== */
+.descripcion {
+  font-size: 18px;
+  color: var(--color-text-muted);
+  margin: 8px 0 24px;
+}
+
+.intro-descripcion {
+  font-size: 1.1em;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+  color: var(--color-text);
+}
+
+/* ===============================
+   Select
+   =============================== */
 select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 12px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
   padding: 12px 18px;
   font-size: 16px;
   font-weight: 500;
-  color: #333;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  color: var(--color-text);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
   cursor: pointer;
   width: 250px;
   max-width: 90%;
   display: block;
-  margin: 12px auto;
+  margin: 8px auto;
+  position: relative;
+  z-index: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' width='12' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='30,50 70,90 110,50' fill='none' stroke='%23999' stroke-width='15' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 14px center;
   background-size: 12px;
-}  
-
-select:focus {
-  border-color: #0077cc;
-  box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.15);
-  outline: none;
-}  
-
-/* ===============================*/
-/* ==== Texto descriptivo ==== */
-/* ===============================*/
-.descripcion {
-  font-size: 18px;
-  color: #666;
-  margin: 8px 0 24px;
 }
 
-/* ===============================*/
-/* ==== Contenedor de menú ==== */
-/* ===============================*/
+select:focus {
+  border-color: var(--color-accent-dark);
+  box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.15);
+  outline: none;
+}
+
+select option[value=""] {
+  text-align: center;
+}
+
+/* ===============================
+   Menú container y form-group
+   =============================== */
 .menu-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  margin-top: 40px;
-  margin-bottom: 20px;
+  gap: 12px;
+  margin: 10px auto;
 }
 
 .menu-container label {
   font-size: 16px;
   font-weight: 600;
-  color: #444;
+  color: var(--color-text-label);
   margin-bottom: 4px;
 }
 
-/* =============================== */
-/* ==== Buscador directo por país ==== */
-/* =============================== */
-
-#buscador-wrapper {
-display: flex;
-justify-content: center;
-position: relative;
-overflow: visible;
-flex-direction: column;
-margin: 10px auto 16px; /* Elegí el margen que prefieras */
-z-index: 50;
-}
-
-#buscador-wrapper { margin-bottom: 6px; }           /* buscador pegado al título */
-.random-actions-title { margin: 4px 0 8px 0; }       /* título corto y cercano */
-.random-actions { margin: 6px 0 12px 0; }            /* botones cerca del título */
-#selectors { margin-top: 12px; }        
-
-.buscador-inner {
-display: flex;
-border-radius: 12px;
-overflow: visible;
-background-color: white;
-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-position: relative;
-z-index: 51;
-}
-
-
-#buscador-pais {
-padding: 10px 14px;
-font-size: 16px;
-outline: none !important;
-width: 250px;
-max-width: 90%;
-border: none !important;
-border-right: none; /* 👈 Oculta solo el borde derecho */
-border-radius: 12px 0 0 12px;
-background: inherit !important;
-box-shadow: none !important; /* ❌ Evita línea azul adicional */
-box-sizing: border-box;
-flex: 1;
-}
-
-#buscador-pais:focus {
-/* Mantén el border original y no lo cambies de grosor */
-border: 1px solid #ccc;    
-border-right: none;
-
-/* Este outline es el “borde azul” sin alterar el tamaño */
-outline: 2px solid rgba(30,144,255,0.8);
-outline-offset: -2px;
-
-/* Elimina cualquier otro border o box-shadow aquí */
-box-shadow: none;
-}
-
-
-/* ============================= */
-/* 1) Botones: mismos estilos   */
-/* ============================= */
-#boton-limpiar,
-#boton-buscar {
-/* Alto igual al input */
-height: 100%;
-/* Ancho flexible con padding horizontal */
-padding: 0 16px;
-
-/* Tipografía idéntica */
-font-size: 22px;
-font-weight: 600;
-color: #000;
-
-/* Fondo y sombra */
-background-color: #f4faff;
-box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-
-/* Borde base */
-border: 1px solid #ccc;
-cursor: pointer;
-
-/* Flex para centrar icono/letra */
-display: flex;
-align-items: center;
-justify-content: center;
-
-/* Transición idéntica */
-transition: background-color 0.3s ease,
-            transform       0.3s ease,
-            box-shadow      0.3s ease;
-}
-
-/* Hover igual */
-#boton-limpiar:hover,
-#boton-buscar:hover {
-background-color: #e0f0ff;
-transform: translateY(-3px) scale(1.05);
-}
-
-/* ============================= */
-/* 2) Botón LIMPIAR (intermedio)*/
-/* ============================= */
-#boton-limpiar {
-/* Oculto hasta que JS quite .oculto */
-/* (asegurate de tenerlo en tu HTML: <button id="boton-limpiar" class="oculto">…) */
-border: none !important;
-}
-
-/* ============================= */
-/* 3) Botón BUSCAR (extremo)     */
-/* ============================= */
-#boton-buscar {
-border-left: none;           /* no doble borde con limpiar */
-border-radius: 0 12px 12px 0; /* solo redondeado derecha */
-}
-
-/* ============================= */
-/* 4) Ocultar limpiador         */
-/* ============================= */
-.oculto {
-display: none !important;
-}
-
-
-/* =============================== */
-/* ==== Espaciado del buscador y menús ==== */
-/* =============================== */
-
-.menu-container {
-margin: 10px auto;
-gap: 12px;
-}
-
-select {
-margin: 8px 0;
-}
-
-/* ===============================*/
-/* ==== Agrupador de cada label + select ==== */
-/* ===============================*/
 .form-group {
   display: flex;
   flex-direction: column;
@@ -256,9 +152,204 @@ margin: 8px 0;
   gap: 6px;
 }
 
-/* ===============================*/
-/* ==== Lista de diarios ==== */
-/* ===============================*/
+#selectors {
+  margin-top: 12px;
+}
+
+/* Ocultar selector de país hasta que se elija un continente */
+#grupo-pais {
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(-6px);
+  overflow: hidden;
+  pointer-events: none;
+  transition: opacity 0.5s ease,
+              max-height 0.5s ease,
+              transform 0.5s ease;
+}
+
+#grupo-pais.visible {
+  opacity: 1;
+  max-height: 120px;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Botón clear de los selectors */
+.clear-selectors-wrapper {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.clear-selectors-wrapper.visible {
+  opacity: 1;
+  max-height: 60px;
+  pointer-events: auto;
+}
+
+#boton-clear-selectors {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 5px 14px;
+  cursor: pointer;
+  transition: background-color var(--transition-base),
+              color var(--transition-base),
+              border-color var(--transition-base);
+}
+
+#boton-clear-selectors:hover {
+  background-color: var(--color-hover-bg);
+  color: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+}
+
+/* ===============================
+   Buscador por país
+   =============================== */
+#buscador-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  margin: 6px auto;
+  z-index: 50;
+  overflow: visible;
+}
+
+/* El borde y foco viven en .buscador-inner */
+.buscador-inner {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  z-index: 51;
+  overflow: visible;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+/* Foco: borde azul en el contenedor completo */
+.buscador-inner:focus-within {
+  border-color: var(--color-accent-dark);
+  box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.15);
+}
+
+/* Cuando hay sugerencias: aplana inferior y mantiene borde azul */
+.buscador-inner.has-suggestions {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-color: var(--color-accent-dark);
+  box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.15);
+}
+
+.solo-input {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  background: transparent;
+}
+
+.input-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+#buscador-pais {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--color-text);
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  box-sizing: border-box;
+  min-width: 200px;
+}
+
+/* ===============================
+   Botones del buscador
+   =============================== */
+#boton-limpiar {
+  padding: 0 14px;
+  font-size: 20px;
+  color: #555;
+  background: transparent;
+  border: none;
+  border-left: 1px solid var(--color-border);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  /* Redondeado a la derecha ya que es el último elemento */
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+#boton-limpiar:hover {
+  background-color: var(--color-hover-bg);
+  color: var(--color-accent-dark);
+}
+
+.oculto,
+#boton-limpiar.oculto {
+  display: none !important;
+}
+
+/* ===============================
+   Sugerencias del buscador
+   =============================== */
+#sugerencias {
+  position: absolute;
+  top: 100%;
+  left: -1px;
+  width: calc(100% + 2px);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-accent-dark);
+  border-top: none;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  box-shadow: 0 0 0 2px rgba(0, 119, 204, 0.15), var(--shadow-sm);
+  z-index: 9999;
+  padding: 4px 0;
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+#sugerencias:empty {
+  display: none;
+}
+
+.sugerencia-item {
+  padding: 10px 12px;
+  cursor: pointer;
+  font-size: 15px;
+  text-align: left;
+  transition: background-color var(--transition-base);
+}
+
+.sugerencia-item:hover,
+#sugerencias div.active {
+  background-color: var(--color-hover-bg);
+  color: #000;
+  border-radius: var(--radius-sm);
+}
+
+/* ===============================
+   Lista de diarios
+   =============================== */
 ul {
   display: flex;
   flex-wrap: wrap;
@@ -274,19 +365,18 @@ ul li {
 ul li a {
   display: inline-block;
   padding: 10px 16px;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   font-weight: 700;
   text-decoration: none;
   background-color: #fdfdfd;
-  color: #1e90ff;
-  box-shadow: none;
-  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  color: var(--color-accent);
+  transition: background-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
 }
 
 ul li a:hover:not(.diario-seleccionado) {
   background-color: #e8f4ff;
   transform: scale(1.05);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-sm);
 }
 
 ul li a:active {
@@ -300,36 +390,35 @@ ul li a:active {
 
 #diarios:empty {
   display: none;
-}  
+}
 
 #diarios li {
   margin: 10px 0;
-  transition: transform 0.2s, box-shadow 0.2s;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
 #diarios li a:hover:not(.diario-seleccionado) {
-  background-color: #e0f0ff;
+  background-color: var(--color-hover-bg);
   transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-sm);
 }
 
-/* ===============================*/
-/* ==== Diario seleccionado ==== */
-/* ===============================*/
+/* ===============================
+   Diario seleccionado
+   =============================== */
 .diario-seleccionado {
-  background-color: #d0e9ff;
-  border: 2px solid #1e90ff;
+  background-color: var(--color-selected-bg);
+  border: 2px solid var(--color-accent);
   font-weight: 700;
   padding: 8px 16px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-  border-radius: 12px;
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-lg);
+  transition: var(--transition-color), box-shadow 0.3s ease, border 0.3s ease;
 }
 
-/* apuntamos directamente al <a> para cambiar el color del texto */
 .diario-seleccionado a {
-  color: #111111 !important;
+  color: #111 !important;
   text-decoration: none;
 }
 
@@ -338,122 +427,176 @@ ul li a:active {
 }
 
 .diario-seleccionado:hover a {
-  color: #000000 !important;
+  color: #000 !important;
 }
 
-/* ===============================*/
-/* ==== Botón de modo claro/oscuro ==== */
-/* ===============================*/
-/*#modoToggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 1px solid #1e90ff;
-  font-size: 24px;
-  cursor: pointer;
-  z-index: 1000;
+/* ===============================
+   Aparición progresiva de diarios
+   =============================== */
+.diario-link {
+  display: block;
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #1a1a1a;
+  background-color: #f5f5f5;
+  border-radius: var(--radius-md);
+  opacity: 0;
+  transition: background-color 0.3s ease, color 0.3s ease,
+              transform 0.2s ease-in-out, box-shadow 0.3s ease,
+              opacity 0.3s ease-in;
+}
+
+.diario-link.visible {
+  opacity: 1;
+}
+
+/* ===============================
+   Country description
+   =============================== */
+.country-description {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: var(--color-text);
+  text-align: center;
+  margin: 24px auto 12px;
+  max-width: 800px;
+  line-height: 1.6;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.country-description.visible {
+  opacity: 1;
+}
+
+/* ===============================
+   Botones random
+   =============================== */
+#buscador-wrapper  { margin-bottom: 6px; }
+.random-actions-title { margin: 4px 0 8px; }
+.random-actions    { margin: 6px 0 12px; }
+
+.random-actions-title {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-text);
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.random-actions-title.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.random-title {
+  font-size: 1.1rem;
+  line-height: 1.35;
+  font-weight: 600;
+  color: var(--color-text-label);
+  text-align: center;
+  letter-spacing: 0.3px;
+  margin: 0;
+}
+
+.random-title em {
+  font-style: italic;
+}
+
+.random-actions {
   display: flex;
-  align-items: center;
+  gap: 10px;
   justify-content: center;
-  padding: 0;
-  line-height: 1;
-  background-color: #fdfdfd;
-  color: #1e90ff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
-}  
-
-#modoToggle:hover {
-  background-color: #e0e0e0;
-  transform: scale(1.1);
-}*/
-/* ===============================*/
-/* ==== Responsive tablets / pantallas medianas ==== */
-/* ===============================*/
-@media (max-width: 768px) {
-  h1 {
-    font-size: 26px;
-  }
-
-  select,
-  ul li a {
-    font-size: 15px;
-  }
-
-  .menu-container {
-    gap: 10px;
-  }
-
-  select {
-    padding: 8px 10px;
-    min-width: 200px;
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  #modoToggle {
-    top: 10px;
-    right: 10px;
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
-  }
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* ===============================*/
-/* ==== Responsive celulares chicos ==== */
-/* ===============================*/
-@media (max-width: 480px) {
-  h1 {
-    font-size: 20px;
-    line-height: 1.3;
-  }
-
-  .descripcion {
-    font-size: 16px;
-  }
-
-  select {
-    font-size: 14px;
-    padding: 8px 10px;
-    min-width: 180px;
-  }
-
-  ul li a {
-    font-size: 14px;
-    padding: 8px 12px;
-  }
-
-  #modoToggle {
-    top: 8px;
-    right: 8px;
-    width: 36px;
-    height: 36px;
-    font-size: 18px;
-  }
-
-  .idioma-aviso {
-    font-size: 0.8em;
-    padding: 0 10px;
-  }
+.random-actions.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
-footer a {
-  color: #1e90ff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease, text-decoration 0.3s ease;
-  margin: 0 6px;
+.surprise-btn {
+  padding: 10px 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.05s ease, box-shadow var(--transition-base);
 }
 
-footer a:hover {
-  text-decoration: underline;
-  color: #63b3ed;
+/* Ambos botones random con el mismo estilo */
+#btn-random-newspaper,
+#btn-random-country {
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 14px 24px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #ffffff, #f4f4f4);
+  border: 2px solid #ddd;
+  box-shadow: var(--shadow-md);
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
 }
 
+#btn-random-newspaper:hover,
+#btn-random-country:hover {
+  background: linear-gradient(135deg, #f9f9f9, #ededed);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ===============================
+   Cookie banner
+   =============================== */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #222;
+  color: var(--color-white);
+  text-align: center;
+  padding: 1em;
+  font-size: 0.9em;
+  z-index: 9999;
+  display: none;
+}
+
+.cookie-banner button {
+  margin-left: 1em;
+  padding: 0.5em 1em;
+  background-color: #4caf50;
+  color: var(--color-white);
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ===============================
+   Google Ads wrapper
+   =============================== */
+.adsbygoogle-wrapper {
+  margin: 0;
+  padding: 0.5em 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* ===============================
+   Footer
+   =============================== */
 footer {
   padding: 20px 10px;
   font-size: 14px;
@@ -464,134 +607,37 @@ footer {
 
 footer br {
   display: block;
-  margin-bottom: 6px; /* separa visualmente el texto de los enlaces */
+  margin-bottom: 6px;
 }
 
-.cookie-banner {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #222;
-  color: #fff;
-  text-align: center;
-  padding: 1em;
-  font-size: 0.9em;
-  z-index: 9999;
-  display: none;
-}
-.cookie-banner button {
-  margin-left: 1em;
-  padding: 0.5em 1em;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
+footer a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+  opacity: 0.85;
+  margin: 0 6px;
+  transition: color 0.3s ease, text-decoration 0.3s ease, opacity 0.2s ease;
 }
 
-.solo-input {
-  background-color: white;
-  position: relative;
-  display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 12px 0 0 12px;
-  overflow: visible !important;
-  transition: border-radius 0.2s ease;
-}
-
-/* 👉 Agregalo justo debajo o cerca de acá: */
-.input-wrapper {
-position: relative;
-flex: 1;
-}
-.solo-input.has-suggestions {
-border-top-left-radius: 12px;
-border-bottom-left-radius: 0; /* aplana la esquina inferior izquierda */
-overflow: hidden; /* ⚠️ fuerza que el fondo se recorte igual que el borde */
-}
-
-/* Aplica al input dentro del contenedor cuando hay sugerencias */
-.solo-input.has-suggestions input {
-  border-bottom-left-radius: 0;
-  background-clip: padding-box; /* este detalle evita fugas del fondo blanco */
-}  
-
-.solo-input.has-suggestions:focus-within #sugerencias {
-  left: -1px;  /* más hacia la izquierda */
-  width: 100%; /* compensa la extensión */
-  box-shadow:
-   /* 0 0 0 2px rgba(30,144,255,0.8),*/
-    0 2px 6px rgba(0, 0, 0, 0.06);
-  border-top: none;
-}  
-#sugerencias {
-  position: absolute;
-  top: 100%;
-  left: -1px;
-  width: calc(100% + 0px); /* Ajustamos para que sobresalga levemente */
-  background-color: #ffffff;
-  border: 1px solid #ccc; /* borde neutral */
-  border-top: none;
-  border-radius: 0   0  0 12px !important;
-  /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06); */ /* sombra desactivada por estética */
-  z-index: 9999;
-  padding: 4px 0;
-  overflow-y: auto;
-  max-height: 200px;
-  /* animation: fadeInUp 0.3s ease forwards; */ /* opcional: quitar animación */
-}
-
-#sugerencias:empty {
-  display: none;
-}
-
-.sugerencia-item {
-  padding: 10px 12px;
-  cursor: pointer;
-  font-size: 15px;
-  text-align: left;
-  transition: background-color 0.2s ease;
-}
-
-/* Esta línea hace magia para casos extremos */
-select {
-  position: relative;
-  z-index: 0;
-}
-
-.sugerencia-item:hover {
-  background-color: #e0f0ff;
-} 
-
-#sugerencias div.active {
-  background-color: #e0f0ff;
-  color: #000;
-  border-radius: 6px;
-}  
-
-/* =============================== */
-/* ==== Animación de entrada fade-in-up ==== */
-/* =============================== */
-
-@keyframes fadeInUp {
-from {
-  opacity: 0;
-  transform: translateY(10px);
-}
-to {
+footer a:hover {
+  text-decoration: underline;
+  color: #63b3ed;
   opacity: 1;
-  transform: translateY(0);
-}
 }
 
-/* ==== Animación fade-in-up ==== */
+/* ===============================
+   Animaciones
+   =============================== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 .fade-in {
-animation: fadeInUp 0.6s ease forwards;
-opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
 }
 
-/* ==== Delays escalonadas ==== */
 .delay-1 { animation-delay: 0.1s; }
 .delay-2 { animation-delay: 0.3s; }
 .delay-3 { animation-delay: 0.5s; }
@@ -601,150 +647,178 @@ opacity: 0;
 .delay-7 { animation-delay: 1.3s; }
 .delay-8 { animation-delay: 1.5s; }
 
-footer a {
-opacity: 0.85;
-transition: opacity 0.2s ease;
+/* ===============================
+   Responsive — tablets (≤768px)
+   =============================== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+    padding: 0 16px;
+  }
+
+  .descripcion { font-size: 16px; }
+
+  select, ul li a { font-size: 15px; }
+
+  .menu-container { gap: 10px; }
+
+  select {
+    padding: 8px 10px;
+    min-width: 200px;
+    width: 90%;
+  }
+
+  /* Buscador full width en tablet */
+  #buscador-wrapper {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #buscador-pais {
+    min-width: unset;
+    width: 100%;
+  }
+
+  /* Botones random más compactos */
+  #btn-random-newspaper,
+  #btn-random-country {
+    padding: 12px 18px;
+    font-size: 1rem;
+  }
 }
 
-footer a:hover {
-opacity: 1;
+/* ===============================
+   Responsive — celulares (≤480px)
+   =============================== */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 18px;
+    line-height: 1.4;
+    padding: 0 12px;
+  }
+
+  .descripcion {
+    font-size: 15px;
+    padding: 0 12px;
+  }
+
+  .intro-descripcion {
+    font-size: 0.95em;
+    padding: 0.5rem 12px;
+    margin: 1rem auto;
+  }
+
+  /* Buscador ocupa casi todo el ancho */
+  #buscador-wrapper {
+    width: 94%;
+  }
+
+  #buscador-pais {
+    font-size: 15px;
+    min-width: unset;
+    width: 100%;
+  }
+
+  /* Tap target mínimo 44px para dedos */
+  #boton-limpiar {
+    min-height: 44px;
+    padding: 0 12px;
+  }
+
+  select {
+    font-size: 15px;
+    padding: 10px 12px;
+    width: 94%;
+    min-width: unset;
+  }
+
+  /* Diarios en columna en mobile */
+  ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 0 12px;
+  }
+
+  ul li {
+    width: 100%;
+  }
+
+  ul li a {
+    display: block;
+    font-size: 14px;
+    padding: 12px 16px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .diario-link {
+    font-size: 14px;
+    padding: 12px 16px;
+    text-align: left;
+  }
+
+  /* Botones random apilados en mobile */
+  .random-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 94%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #btn-random-newspaper,
+  #btn-random-country {
+    width: 100%;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 14px 16px;
+  }
+
+  .idioma-aviso {
+    font-size: 0.8em;
+    padding: 0 12px;
+  }
+
+  /* Footer links con más espacio para tap */
+  footer a {
+    display: inline-block;
+    padding: 4px 2px;
+    margin: 2px 4px;
+  }
 }
 
-.adsbygoogle-wrapper {
-margin: 0;
-padding: 0.5em 0 0.5em; /* muy poco arriba y abajo */
-display: flex;
-justify-content: center;
-}
+/* ===============================
+   Responsive — celulares muy chicos (≤360px)
+   =============================== */
+@media (max-width: 360px) {
+  h1 {
+    font-size: 16px;
+    padding: 0 10px;
+  }
 
-/* 1) Cuando el contenedor aplana su bottom-left, el input también */
-.solo-input.has-suggestions > #buscador-pais {
-/* TL  TR  BR  BL */
-border-radius: 12px 0 0 0 !important;
-}
-.intro-descripcion {
-font-size: 1.1em;
-line-height: 1.6;
-max-width: 800px;
-margin: 2rem auto;
-padding: 1rem;
-text-align: center;
-color: #333;
-}
+  #buscador-wrapper {
+    width: 98%;
+  }
 
-.country-description {
-  font-size: 1.125rem;
-  font-weight: bold;
-  color: #333;
-  text-align: center;
-  margin: 24px auto 12px auto;
-  max-width: 800px;
-  line-height: 1.6;
-  opacity: 0;
-  transition: opacity 0.8s ease-in-out;
-  pointer-events: none; /* evita interacción mientras está oculta */
+  select {
+    width: 98%;
+  }
+
+  .random-actions {
+    width: 98%;
+  }
+
+  #btn-random-newspaper,
+  #btn-random-country {
+    font-size: 0.9rem;
+    padding: 12px 10px;
+  }
+
+  ul {
+    padding: 0 8px;
+  }
 }
-
-.country-description.visible {
-  opacity: 1;
-}
-
-/* ==== Aparición progresiva de diarios ==== */
-.diario-link {
-  display: block;
-  padding: 12px 20px;
-  font-size: 16px;
-  color: #1a1a1a;
-  background-color: #f5f5f5;
-  border-radius: 10px;
-  transition: background-color 0.3s ease, color 0.3s ease,
-              transform 0.2s ease-in-out, box-shadow 0.3s ease,
-              opacity 0.3s ease-in;
-  opacity: 0; /* arranca invisible */
-}
-
-.diario-link.visible {
-  opacity: 1; /* aparece */
-}
-
-.random-actions {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  pointer-events: none; /* mientras no se ven, que no sean clickeables */
-}
-
-.random-actions.visible {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.random-title {
-  font-size: 1.1rem;       /* ~18px */
-  line-height: 1.35;
-  font-weight: 600;       /* fuerte pero no exagerado */
-  color: #444;            /* tono oscuro amigable */
-  text-align: center;
-  letter-spacing: 0.3px;
-  margin: 0;                 /* el bloque padre maneja el espaciado */
-}
-
-.random-actions-title {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  pointer-events: none; /* que no sea clickeable hasta aparecer */
-}
-
-.random-actions-title.visible {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.random-title em {
-  font-style: italic;
-}
-
-.random-actions-title {
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin: 18px 0 10px 0;
-  color: #333;
-}
-
-.surprise-btn {
-  padding: 10px 14px;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  background: #fff;
-  cursor: pointer;
-  font-weight: 600;
-  transition: transform .05s ease, box-shadow .2s ease;
-}
-
-#btn-random-newspaper {
-  font-size: 1.15rem;       /* texto un poco más grande */
-  font-weight: 700;         /* más fuerte que los demás */
-  padding: 14px 24px;       /* más alto y ancho */
-  border-radius: 12px;      /* bordes más suaves */
-  background: linear-gradient(135deg, #ffffff, #f4f4f4); /* sutil degradado */
-  border: 2px solid #ddd;   /* un poco más definido */
-  box-shadow: 0 3px 6px rgba(0,0,0,0.08); /* sombra ligera */
-  transition: all 0.25s ease;
-}
-
-/* Efecto hover */
-#btn-random-newspaper:hover {
-  background: linear-gradient(135deg, #f9f9f9, #ededed);
-  transform: translateY(-2px) scale(1.02); /* levanta un poco */
-  box-shadow: 0 6px 10px rgba(0,0,0,0.12);
-}
-
-
-#btn-random-country {
-  display: none;
-}
-

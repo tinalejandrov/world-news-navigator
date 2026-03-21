@@ -1549,11 +1549,19 @@ for (let continent of orderedContinents) {
 // ===============================
 continentSelect.addEventListener("change", function () {
   const selectedContinent = this.value;
+  const grupoPais = document.getElementById("grupo-pais");
 
   // Limpiar anteriores
   newspaperList.innerHTML = "";
   countrySelect.innerHTML = '<option value="">-- Select --</option>';
   countrySelect.disabled = !data[selectedContinent];
+
+  // Mostrar u ocultar el selector de país
+  if (selectedContinent && data[selectedContinent]) {
+    setTimeout(() => grupoPais.classList.add("visible"), 120);
+  } else {
+    grupoPais.classList.remove("visible");
+  }
 
   if (data[selectedContinent]) {
     if (selectedContinent === "central_america") {
@@ -1675,17 +1683,20 @@ function formatName(text) {
 
 countrySelect.addEventListener("change", function () {
   const selectedContinent = continentSelect.value;
-  const selectedCountry = normalizarClavePais(this.value);
+  const selectedCountry   = normalizarClavePais(this.value);
+  const grupoClear        = document.getElementById("grupo-clear");
+
   newspaperList.innerHTML = "";
 
-  const newspapers =
-    selectedContinent === "central_america"
-      ? data[selectedContinent].mainland[selectedCountry] ||
-        data[selectedContinent].islands[selectedCountry]
-      : data[selectedContinent][selectedCountry];
+  if (!selectedCountry) {
+    grupoClear.classList.remove("visible");
+    return;
+  }
 
-  // 👇 Mostrar descripción inmediatamente
   mostrarDescripcion(selectedCountry);
+  mostrarDiarios(selectedContinent, selectedCountry, newspaperList);
+  // Aparece sincronizado con los primeros diarios
+  setTimeout(() => grupoClear.classList.add("visible"), 300);
 });
 
 // ===============================
@@ -1711,30 +1722,40 @@ window.addEventListener("load", function () {
 });
 
 function buscarPorPais() {
-  
   const input = document.getElementById("buscador-pais");
   const searchTerm = input.value.trim().toLowerCase();
-  const countrySelect = document.getElementById("pais");
-  const continentSelect = document.getElementById("continente");
+  if (!searchTerm) return;
 
-  let found = false;
+  const rows = flattenCountries(data);
+  const match = rows.find(r =>
+    r.countryKey.replace(/_/g, " ").includes(searchTerm) ||
+    formatName(r.countryKey).toLowerCase().includes(searchTerm)
+  );
 
-  for (let i = 0; i < countrySelect.options.length; i++) {
-    const optionText = countrySelect.options[i].textContent.toLowerCase();
-    if (optionText.includes(searchTerm)) {
-      countrySelect.selectedIndex = i;
-      found = true;
-      break;
-    }
-  }
-
-  if (!found) {
+  if (!match) {
     alert("Country not found. Please try another name.");
-  } else {
-    const newspaperList = document.getElementById("diarios");
-    mostrarDiarios(continentSelect.value, countrySelect.value, newspaperList);
-    
+    return;
   }
+
+  continentSelect.value = match.continent;
+  continentSelect.dispatchEvent(new Event("change", { bubbles: true }));
+
+  setTimeout(() => {
+    const opt = Array.from(countrySelect.options).find(o => o.value === match.countryKey);
+    if (opt) {
+      countrySelect.value = match.countryKey;
+    } else {
+      const newOpt = document.createElement("option");
+      newOpt.value = match.countryKey;
+      newOpt.textContent = `${flags[match.countryKey] || ""} ${formatName(match.countryKey)}`;
+      countrySelect.appendChild(newOpt);
+      countrySelect.value = match.countryKey;
+      countrySelect.disabled = false;
+    }
+    mostrarDescripcion(match.countryKey);
+    mostrarDiarios(match.continent, match.countryKey, newspaperList);
+    newspaperList.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, 0);
 }
 
 
@@ -1792,9 +1813,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const botonLimpiar = document.getElementById("boton-limpiar");
   const input = document.getElementById("buscador-pais");
   const boton = document.getElementById("boton-buscar");
-  const countrySelect = document.getElementById("pais");
-  const continentSelect = document.getElementById("continente");
-  const newspaperList = document.getElementById("diarios");
 
   input.addEventListener("keydown", function (e) {
     const sugerenciasItems = document.querySelectorAll("#sugerencias div");
@@ -1834,28 +1852,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const exactMatches = [];
 const partialMatches = [];
 
-for (const continent in data) {
-  for (const country in data[continent]) {
-    const countryName = country.replace(/_/g, " ");
-    const lowerName = countryName.toLowerCase();
-
-    const match = {
-      country,
-      countryName: capitalizarNombre(countryName),
-      continent,
-      flag: flags[country] || "🌐"
-    };
-
-    if (lowerName.startsWith(searchTerm)) {
-      exactMatches.push(match);
-    } else if (lowerName.includes(searchTerm)) {
-      partialMatches.push(match);
-    }
+const allRows = flattenCountries(data);
+allRows.forEach(({ continent, countryKey }) => {
+  const countryName = countryKey.replace(/_/g, " ");
+  const lowerName = countryName.toLowerCase();
+  const match = {
+    country: countryKey,
+    countryName: capitalizarNombre(countryName),
+    continent,
+    flag: flags[countryKey] || "🌐"
+  };
+  if (lowerName.startsWith(searchTerm)) {
+    exactMatches.push(match);
+  } else if (lowerName.includes(searchTerm)) {
+    partialMatches.push(match);
   }
-}
+});
 
 const resultados = [...exactMatches, ...partialMatches];
-const soloInput = document.querySelector(".solo-input");
+const soloInput = document.querySelector(".buscador-inner");
 
 if (resultados.length > 0) {
   soloInput.classList.add("has-suggestions");
@@ -1868,7 +1883,7 @@ if (resultados.length > 0) {
       div.className = "sugerencia-item";
       div.textContent = `${result.flag} ${result.countryName}`;
       div.addEventListener("click", () => {
-        const soloInput = document.querySelector(".solo-input");
+        const soloInput = document.querySelector(".buscador-inner");
         continentSelect.value = result.continent;
         countrySelect.innerHTML = '<option value="">-- Select --</option>';
         const option = document.createElement("option");
@@ -1892,7 +1907,7 @@ if (resultados.length > 0) {
   document.addEventListener("click", function (event) {
     const sugerenciasBox = document.getElementById("sugerencias");
     const buscadorWrapper = document.getElementById("buscador-wrapper");
-    const soloInput = document.querySelector(".solo-input"); // 👈 NUEVO
+    const soloInput = document.querySelector(".buscador-inner"); // 👈 NUEVO
   
     // Si el clic fue fuera del buscador y del botón, ocultar sugerencias y restaurar borde
     if (!buscadorWrapper.contains(event.target)) {
@@ -1902,6 +1917,20 @@ if (resultados.length > 0) {
   });
   
 
+  // ── Botón clear selectors ──
+  const botonClearSelectors = document.getElementById("boton-clear-selectors");
+  botonClearSelectors.addEventListener("click", function () {
+    continentSelect.value = "";
+    countrySelect.innerHTML = '<option value="">-- Select --</option>';
+    countrySelect.disabled = true;
+    newspaperList.innerHTML = "";
+    document.getElementById("grupo-pais").classList.remove("visible");
+    document.getElementById("grupo-clear").classList.remove("visible");
+    const divDescripcion = document.getElementById("country-description");
+    divDescripcion.classList.remove("visible");
+    divDescripcion.textContent = "";
+  });
+
   botonLimpiar.addEventListener("click", function () {
     input.value = "";
     countrySelect.innerHTML = '<option value="">-- Select --</option>';
@@ -1909,9 +1938,10 @@ if (resultados.length > 0) {
     countrySelect.disabled = true;
     newspaperList.innerHTML = "";
     document.getElementById("sugerencias").innerHTML = "";
+    document.getElementById("grupo-pais").classList.remove("visible");
     botonLimpiar.classList.add("oculto"); // ✅ Ocultar botón después de limpiar
   
-    const soloInput = document.querySelector(".solo-input");
+    const soloInput = document.querySelector(".buscador-inner");
     soloInput.classList.remove("has-suggestions");
     input.focus(); // 👈 Le devuelve el foco al input automáticamente
   
@@ -1937,13 +1967,7 @@ function removeActive(items) {
 
 });
 
-function normalizarClavePais(nombre) {
-  return nombre
-    .toLowerCase()
-    .trim()
-    .replace(/ /g, "_")
-    .replace(/-/g, "_");
-}
+
 
 // Referencias existentes de tu app
 const btnRandomCountry = document.getElementById("btn-random-country");
