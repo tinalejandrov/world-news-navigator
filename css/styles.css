@@ -473,9 +473,9 @@ ul li a:active {
 /* ===============================
    Botones random
    =============================== */
-#buscador-wrapper  { margin-bottom: 6px; }
-.random-actions-title { margin: 4px 0 8px; }
-.random-actions    { margin: 6px 0 12px; }
+#buscador-wrapper  { margin-bottom: 24px; }
+.random-actions-title { margin: 0 0 12px; }
+.random-actions    { margin: 0 0 28px; }
 
 .random-actions-title {
   text-align: center;
